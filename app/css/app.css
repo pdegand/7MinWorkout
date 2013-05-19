@@ -2,10 +2,24 @@ body {
     background-color: white;
 }
 
+header {
+    font-size: 1.5em;
+}
+
+header .menu {
+    margin: 10px auto;
+}
+
+div#pageContent {
+    margin: 60px auto;
+    text-align: center;
+}
+
 footer {
-    box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.3);
     padding: 1.5em;
-    background-color: orange;
+    box-shadow: inset 0 12px 20px -10px rgba(0, 0, 0, 0.3);
+
+    background-color: #eeeeee;
 }
 
 /* CSS PARTIAL MAIN_VIEW */

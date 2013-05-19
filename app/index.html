@@ -8,22 +8,25 @@
         <link rel="stylesheet" href="css/app.css"/>
     </head>
     <body>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <ul class="nav">
-                        <li class="active"><a href="#">Qu'est ce que c'est ?</a></li>
-                        <li class=""><a href="#">Les exercices</a></li>
-                    </ul>
-                </div>
+        <header>
+            <div class="container">
+                <ul class="menu nav nav-pills pull-right">
+                    <li class="active"><a>Index</a></li>
+                    <li><a href="#">Learn The Exercices</a></li>
+                    <li><a href="#">What is this ?!</a></li>
+                </ul>
+                <h3>7MinWorkout</h3>
+            </div>
+        </header>
+        <hr>
+
+        <div id="pageContent" class="container">
+            <div class="indexDiv">
+                <h1>7 Minutes Workout</h1>
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta nunc at dolor feugiat lacinia. Fusce sed erat orci, nec consequat elit. Suspendisse lobortis viverra aliquam. Morbi tempor venenatis nisl quis dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et..</p>
+                <a class="btn btn-large" href="#">Start Now !</a>
             </div>
         </div>
-
-        <div class="container">
-            <div ng-view></div>
-            <div>Angular seed app: v<span app-version></span></div>
-        </div>
-
         <footer>
             <div class="container">
                 <div class="row">
