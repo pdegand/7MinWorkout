@@ -1,30 +1,16 @@
-/* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+body {
+    background-color: white;
 }
 
-.menu:before {
-  content: "[";
+footer {
+    box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.3);
+    padding: 1.5em;
+    background-color: orange;
 }
 
-.menu:after {
-  content: "]";
-}
+/* CSS PARTIAL MAIN_VIEW */
 
-.menu > li {
-  display: inline;
-}
 
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
 
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
-}
+
+/* FIN CSS PARTIAL MAIN_VIEW */
