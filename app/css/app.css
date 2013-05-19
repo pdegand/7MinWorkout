@@ -29,9 +29,92 @@
   padding: 0;
 }
 
+html{
+    width:100%;
+    height:100%;
+}
+
+body{
+    width:100%;
+    height:100%;
+}
 /* CSS PARTIAL MAIN_VIEW */
 
+#main_view_div{
+margin:auto;
+width:70%;
+height:70%;
+border:5px solid black;  
+
+}
+
+#main_view_div #steps{
+    width:80%;
+    height:100%;
+    float:left;
+
+}
 
 
+#main_view_div #next_steps{
+    width:19%;
+    height:100%;
+    float:left;
 
+}
+
+.pics {  
+    height:  100%;  
+    width:   100%;  
+    padding: 0;  
+    margin:  0;  
+} 
+
+.pics2{
+        border-left:10px solid black;
+}
+ 
+.pics div {  
+    padding: px;  
+    width:  100%; 
+    height: 100%; 
+    top:  0; 
+    left: 0 ;
+    font-size:10em;
+    line-heiht:100%;
+    padding-top:20%;
+    text-align:center;
+
+} 
+
+div.break{
+    background-color:lightblue;
+}
+
+div.hard{
+    background-color:#C03000;
+}
+
+.pics2 div {   
+    width:  100%; 
+    height: 100%; 
+    top:  0; 
+    left: 0 ;
+    font-size:4em;
+    text-align:center;
+    background-color:lightgray;
+    padding-top:20%;
+
+} 
+.pics div.red{
+    background-color:red;
+}
+
+.pics div.blue{
+    background-color:blue;
+}
+
+.pics div.green{
+    background-color:green;
+}
 /* FIN CSS PARTIAL MAIN_VIEW */
