@@ -1,35 +1,48 @@
 <!doctype html>
 <html lang="en" ng-app="myApp">
-<head>
-  <meta charset="utf-8">
-  <title>My AngularJS App</title>
-  <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
-  <link rel="stylesheet" href="css/bootstrap/bootstrap-responsive.css"/>
-  <link rel="stylesheet" href="css/app.css"/>
-</head>
-<body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
+    <head>
+        <meta charset="utf-8">
+        <title>My AngularJS App</title>
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
+        <link rel="stylesheet" href="css/bootstrap/bootstrap-responsive.css"/>
+        <link rel="stylesheet" href="css/app.css"/>
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <ul class="nav">
+                        <li class="active"><a href="#">Qu'est ce que c'est ?</a></li>
+                        <li class=""><a href="#">Les exercices</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-  <div ng-view></div>
+        <div class="container">
+            <div ng-view></div>
+            <div>Angular seed app: v<span app-version></span></div>
+        </div>
+        
+        <footer>
+            <div class="container">
+                
+            </div>
+        </footer>       
 
-  <div>Angular seed app: v<span app-version></span></div>
+        <!-- In production use:
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+        -->
+        <!-- Libraries -->
+        <script src="lib/jquery.js"></script>
+        <script src="lib/angular/angular.js"></script>
+        <script src="lib/bootstrap.js"></script>
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
-  -->
-  <!-- Libraries -->
-  <script src="lib/jquery.js"></script>
-  <script src="lib/angular/angular.js"></script>
-  <script src="lib/bootstrap.js"></script>
-  
-  <!-- Custom JS -->
-  <script src="js/app.js"></script>
-  <script src="js/services.js"></script>
-  <script src="js/controllers.js"></script>
-  <script src="js/filters.js"></script>
-  <script src="js/directives.js"></script>
-</body>
+        <!-- Custom JS -->
+        <script src="js/app.js"></script>
+        <script src="js/services.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/filters.js"></script>
+        <script src="js/directives.js"></script>
+    </body>
 </html>
