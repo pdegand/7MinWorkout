@@ -17,7 +17,7 @@ header {
 #pageContent {
     margin: 60px auto;
     text-align: center;
-    
+
 }
 
 .navbar .navbar-inner {
@@ -31,7 +31,6 @@ header {
 footer {
     box-shadow: inset 0 12px 20px -10px rgba(0, 0, 0, 0.3);
     background-color: darkorange;
-    
 }
 
 footer .credit {
@@ -42,82 +41,31 @@ footer .credit {
 
 /* CSS PARTIAL MAIN_VIEW */
 
-#main_view_div{
-margin:auto;
-width:70%;
-height:70%;
-border:5px solid black;  
-
+#smwApp{
+    background: lightgray;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+    height: 400px;
+    clear: both;
 }
 
-#main_view_div #steps{
-    width:80%;
-    height:100%;
-    float:left;
-
+#smwApp #steps{
+    width: 80%;
+    height: 100%;
+    float: left;
 }
 
 
-#main_view_div #next_steps{
-    width:19%;
-    height:100%;
-    float:left;
-
+#smwApp #next_steps{
+    width: 20%;
+    height: 100%;
+    float: right;
 }
 
-.pics {  
-    height:  100%;  
-    width:   100%;  
-    padding: 0;  
-    margin:  0;  
-} 
-
-.pics2{
-        border-left:10px solid black;
-}
- 
-.pics div {  
-    padding: px;  
-    width:  100%; 
-    height: 100%; 
-    top:  0; 
-    left: 0 ;
-    font-size:10em;
+#smwApp div {  
+    font-size:20px;
     line-height:100%;
-    padding-top:20%;
     text-align:center;
-
 } 
 
-div.break{
-    background-color:lightblue;
-}
-
-div.hard{
-    background-color:#C03000;
-}
-
-.pics2 div {   
-    width:  100%; 
-    height: 100%; 
-    top:  0; 
-    left: 0 ;
-    font-size:4em;
-    text-align:center;
-    background-color:lightgray;
-    padding-top:20%;
-
-} 
-.pics div.red{
-    background-color:red;
-}
-
-.pics div.blue{
-    background-color:blue;
-}
-
-.pics div.green{
-    background-color:green;
-}
 /* FIN CSS PARTIAL MAIN_VIEW */
 
