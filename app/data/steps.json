@@ -1,11 +1,93 @@
 [{
-    "name": "exo1",
-    "execTime":10,
-    "picture":"img/exo1.png",
-    "type":"exercice"
+    "name": "jumping-jacks",
+    "picture":"img/jumping-jacks.png",
+    "type":"exercise"
 },{
     "name": "break",
-    "execTime":5,
     "picture":"img/break.png",
     "type":"break"
+},{
+    "name": "wall-sit",
+    "picture":"img/wall-sit.png",
+    "type":"exercise"
+},{
+    "name": "break",
+    "picture":"img/break.png",
+    "type":"break"
+},{
+    "name": "push-up",
+    "picture":"img/push-up.png",
+    "type":"exercise"
+},{
+    "name": "break",
+    "picture":"img/break.png",
+    "type":"break"
+},{
+    "name": "abdominal-crunch",
+    "picture":"img/abdominal-crunch.png",
+    "type":"exercise"
+},{
+    "name": "break",
+    "picture":"img/break.png",
+    "type":"break"
+},{
+    "name": "step-up-onto-chair",
+    "picture":"img/step-up-onto-chair.png",
+    "type":"exercise"
+},{
+    "name": "break",
+    "picture":"img/break.png",
+    "type":"break"
+},{
+    "name": "squat",
+    "picture":"img/squat.png",
+    "type":"exercise"
+},{
+    "name": "break",
+    "picture":"img/break.png",
+    "type":"break"
+},{
+    "name": "triceps-dip-on-chair",
+    "picture":"img/triceps-dip-on-chair.png",
+    "type":"exercise"
+},{
+    "name": "break",
+    "picture":"img/break.png",
+    "type":"break"
+},{
+    "name": "plank",
+    "picture":"img/plank.png",
+    "type":"exercise"
+},{
+    "name": "break",
+    "picture":"img/break.png",
+    "type":"break"
+},{
+    "name": "high-knees-running-in-place",
+    "picture":"img/high-knees-running-in-place.png",
+    "type":"exercise"
+},{
+    "name": "break",
+    "picture":"img/break.png",
+    "type":"break"
+},{
+    "name": "lunge",
+    "picture":"img/lunge.png",
+    "type":"exercise"
+},{
+    "name": "break",
+    "picture":"img/break.png",
+    "type":"break"
+},{
+    "name": "push-up-and-rotation",
+    "picture":"img/push-up-and-rotation.png",
+    "type":"exercise"
+},{
+    "name": "break",
+    "picture":"img/break.png",
+    "type":"break"
+},{
+    "name": "side-plank",
+    "picture":"img/side-plank.png",
+    "type":"exercise"
 }]
