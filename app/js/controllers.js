@@ -12,8 +12,11 @@ angular.module('smwApp.controllers', []).
     });
 
     $scope.nextStep = function() {
-        $scope.currentStep = $scope.steps[$scope.currentStepIndex++];
+        $scope.currentStep = $scope.steps[++$scope.currentStepIndex];
+        //$scope.$digest();
     };
+    
+    $scope.nextStep();
 
 });
   

@@ -2,7 +2,6 @@
 
 /* Directives */
 
-
 angular.module('smwApp.directives', []).
         directive('appVersion', ['version', function(version) {
         return function(scope, elm, attrs) {
@@ -13,35 +12,40 @@ angular.module('smwApp.directives', []).
     var directiveDefinitionObject = {
         restrict: 'A',
         link: function(scope, elem, attr) {
-            console.log(scope, elem, attr);
             var currentValue;
-
-            scope.startChrono = function() {
-                console.log(currentValue);
-                scope.progressChrono(1000);
+            
+            var startChrono = function() {
+                elem.html(currentValue);
+                console.log("Chrono started. Duration: %ss", currentValue);
+                progressChrono(1000);
             };
 
-            scope.stopChrono = function() {
-                alert("finish");
+            var stopChrono = function() {
+                if(attr.smwChronoCallback && typeof scope[attr.smwChronoCallback] === 'function') {
+                    console.log("Callback found. Applied...");
+                    scope[attr.smwChronoCallback]();
+                    scope.$apply();
+                } else {
+                    console.warn("No callback found for this chrono");
+                }
             };
 
-            scope.progressChrono = function(speed) {
+            var progressChrono = function(speed) {
                 setTimeout(function() {
                     if (currentValue) {
                         currentValue--;
                         elem.html(currentValue);
-                        scope.progressChrono(speed);
+                        progressChrono(speed);
                     } else {
-                        scope.stopChrono();
+                        stopChrono();
                     }
                 }, speed);
             };
 
             scope.$watch(attr.smwChrono, function(value) {
-                console.log("Chrono value set to %s", value);
                 if (value) {
                     currentValue = value;
-                    scope.startChrono();
+                    startChrono();
                 }
             });
         }

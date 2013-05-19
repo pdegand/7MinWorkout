@@ -1,11 +1,11 @@
 [{
     "name": "exo1",
-    "execTime":30,
+    "execTime":10,
     "picture":"img/exo1.png",
     "type":"exercice"
 },{
     "name": "break",
-    "execTime":10,
+    "execTime":5,
     "picture":"img/break.png",
     "type":"break"
 }]
