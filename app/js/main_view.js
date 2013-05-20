@@ -1,12 +1,15 @@
 $(document).on("smwReady", function() {
     launch();
-console.log(document.body.clientHeight);
-$("#smwApp").css("height",document.body.clientHeight-320);
 
+    $("#smwApp").click(function(){
+        if(controller.timer.status == 1)
+            controller.timer.stop();
+        else controller.timer.restart();
+    })
 });
 
 var cursor = 1;
-var debugMultiplier = 1;
+var debugMultiplier = 5;
 
 var timing = 0;
 var maxTime = 8;
@@ -69,6 +72,7 @@ var Timer = function(callback) {
     this.fps = 30;
     var time = 0;
     var timeLap = 0;
+    this.status = 1;
     this.interval = null;
     this.callback = callback;
     
@@ -83,8 +87,14 @@ var Timer = function(callback) {
     timer.stop = function() {
         //console.log("timer stop");
         clearInterval(this.interval);
+        timer.status = 0;
     };
 
+    timer.restart = function() {
+        //console.log("timer stop");
+        this.interval = setInterval(timer.update, 1000 / timer.fps);
+        timer.status = 1;
+    };
     timer.update = function() {
         timer.time += (1000 / timer.fps)*debugMultiplier;
         timer.timeLap += (1000 / timer.fps)*debugMultiplier;
@@ -218,7 +228,8 @@ var View = function() {
 
     this.updateSlideshow = function(model, timeLap, all) {
         if (model.cursor < model.steps.length) {
-            var time = Math.round((model.steps[model.cursor].duration - Math.round(timeLap / 100) / 10) * 10) / 10;
+            var time = model.steps[model.cursor].duration - timeLap / 1000;
+            time = time.toFixed(1);
             $(view.stepsView[0] + " .timeLap").html(time);
             $(view.stepsView[1] + " .timeLap").html(time);
             //console.log(all);
