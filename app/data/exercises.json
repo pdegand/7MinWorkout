@@ -1,67 +1,79 @@
 [
     {
-        "name": "jumping-jacks",
-        "description": "Jump lol",
+        "name": "Jumping Jacks",
+        "description": "Jump while raising arms and separating legs to sides. Land on forefoot with legs apart and arms overhead. Jump again while lower arms and returning legs to midline. Land on forefoot with arms and legs in original position and repeat.",
         "picture": "img/jumping-jacks.png",
         "duration": 30,
         "break": 10
     }, {
-        "name": "wall-sit",
+        "name": "Wall Sit",
         "picture": "img/wall-sit.png",
+        "description": "Stand comfortably with feet approximately shoulder width apart, with your back against a smooth vertical wall. Slowly slide your back down the wall to assume a position with both your knees and hips at a 90° angle.",
         "duration": 30,
         "break": 10
     }, {
-        "name": "push-up",
+        "name": "Push-up",
         "picture": "img/push-up.png",
+        "description": "Lie prone on floor with hands slightly wider than shoulder width. Raise body up off floor by extend arms with body straight. Keeping body straight, lower body to floor by bending arms. Push body up until arms are extended.",
         "duration": 30,
         "break": 10
     }, {
-        "name": "abdominal-crunch",
+        "name": "Abdominal Crunch",
         "picture": "img/abdominal-crunch.png",
+        "description": "Lie supine on mat with lower legs on a bench,in the air or on the ground. Place hands behind neck or head. Flex waist to raise upper torso from mat. Keep low back on mat and raise torso up as high as possible. Return until back of shoulders contact mat.",
         "duration": 30,
         "break": 10
     }, {
-        "name": "step-up-onto-chair",
+        "name": "Step Up Onto Chair",
         "picture": "img/step-up-onto-chair.png",
+        "description": "Place foot of first leg on chair. Stand on chair by extending hip and knee of first leg and place foot of second leg on chair. Step down with second leg by flexing hip and knee of first leg. Return to original standing position by placing foot of first leg to floor. Repeat first step with opposite leg alternating first steps between legs.",
         "duration": 30,
         "break": 10
     }, {
-        "name": "squat",
+        "name": "Squat",
         "picture": "img/squat.png",
+        "description":"Bend knees forward while allowing hips to bend back behind, keeping back straight and knees pointed same direction as feet. Descend until thighs are just past parallel to floor. Extend knees and hips until legs are straight.",
         "duration": 30,
         "break": 10
     }, {
-        "name": "triceps-dip-on-chair",
+        "name": "Triceps Dip on Chair",
         "picture": "img/triceps-dip-on-chair.png",
+        "description": "Sit on a bench or chair. Begin with the hands next to or slightly under the hips. Lift up onto the hands and bring the hips forward. Bend the elbows (no lower than 90 degrees) and lower the hips down, keeping them very close to the chair. Keep the shoulders down. Push back up without locking the elbows and repeat for 10-16 reps.", 
         "duration": 30,
         "break": 10
     }, {
-        "name": "plank",
+        "name": "Front Plank",
         "picture": "img/plank.png",
+        "description": "Lie prone on the floor. Place forearms on mat, elbows under shoulders. Place legs together with forefeet on floor. Raise body upward by straightening body in straight line. Hold position.",
         "duration": 30,
         "break": 10
     }, {
-        "name": "high-knees-running-in-place",
+        "name": "High Knees - Running in Place",
         "picture": "img/high-knees-running-in-place.png",
+        "description": "Stand tall with your feet placed about hip-width apart. Lift your right knee up higher than your hips aiming towards your chest then lower it back down. As you lower your right knee down, start to bring up your left knee higher than hip level. Keep repeating by alternating your legs and lifting them as high as you can. Stop when you have fatigued your legs.",
         "duration": 30,
         "break": 10
     }, {
-        "name": "lunge",
+        "name": "Lunge",
         "picture": "img/lunge.png",
+        "description": "Stand with hands on hips or clasped behind neck. Lunge forward with first leg. Land on heel then forefoot. Lower body by flexing knee and hip of front leg until knee of rear leg is almost in contact with floor. Return to original standing position by forcibly extending hip and knee of forward leg. Repeat by alternating lunge with opposite leg.",
         "duration": 30,
         "break": 10
     }, {
-        "name": "push-up-and-rotation",
+        "name": "Push-Up and Rotation",
         "picture": "img/push-up-and-rotation.png",
+        "description": "Assume the classic pushup position, but as you come up, rotate your body so your right arm lifts up and extends overhead. Your arms and torso should form a T. Return to the starting position, lower yourself, then push up and rotate till your left hand points toward the ceiling.",
         "duration": 30,
         "break": 10
     }, {
-        "name": "side-plank-left",
-        "picture": "img/side-plank.png",
+        "name": "Side Plank Left",
+        "picture": "img/side-plank-left.png",
+        "description": "Lie on  left side on mat. Place forearm on mat under shoulder perpendicular to body. Place upper leg directly on top of lower leg and straighten knees and hips. Raise body upward by straightening waist so body is ridged. Hold position.",
         "duration": 15
     }, {
-        "name": "side-plank-right",
-        "picture": "img/side-plank.png",
+        "name": "Side Plank Right",
+        "picture": "img/side-plank-right.png",
+        "description":"Without resting, reapeat the Side Plank Left exercise on the right side.",
         "duration": 15,
         "break": 10
     }

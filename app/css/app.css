@@ -121,7 +121,7 @@ footer .credit {
 }
 
 .exercise .exercisePicture.pull-right {
-    margin-right: 50px;
+    margin: 0 50px;
 }
 
 .exercise .exercisePicture.pull-left {
