@@ -1,6 +1,6 @@
 [
     {
-        "name": "Jumping Jacks",
+        "name": "Jumping Jacks with long name",
         "description": "Jump while raising arms and separating legs to sides. Land on forefoot with legs apart and arms overhead. Jump again while lower arms and returning legs to midline. Land on forefoot with arms and legs in original position and repeat.",
         "picture": "img/jumping-jacks.png",
         "duration": 30,
@@ -74,7 +74,6 @@
         "name": "Side Plank Right",
         "picture": "img/side-plank-right.png",
         "description":"Without resting, reapeat the Side Plank Left exercise on the right side.",
-        "duration": 15,
-        "break": 10
+        "duration": 15
     }
 ]

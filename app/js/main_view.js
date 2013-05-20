@@ -5,8 +5,7 @@ $(document).on("smwReady", function() {
 
 
 var cursor = 1;
-
-
+var debugMultiplier = 1;
 
 var timing = 0;
 var maxTime = 8;
@@ -49,7 +48,7 @@ var Model = function() {
         step.duration = duration;
         model.steps[this.steps.length] = step;
         model.maxTime += duration;
-    }
+    };
 
     this.next = function() {
         model.cursor++;
@@ -57,16 +56,12 @@ var Model = function() {
             return false;
         else
             return true;
-    }
+    };
 
     this.getCurrent = function() {
         return model.steps[model.cursor];
-    }
-}
-
-
-
-
+    };
+};
 
 var Timer = function(callback) {
     var timer = this;
@@ -75,8 +70,8 @@ var Timer = function(callback) {
     var timeLap = 0;
     this.interval = null;
     this.callback = callback;
-    timer.start = function()
-    {
+    
+    timer.start = function() {
         //console.log("timer start");
         this.time = 0;
         timer.time = 0;
@@ -84,19 +79,17 @@ var Timer = function(callback) {
         this.interval = setInterval(timer.update, 1000 / timer.fps);
     };
 
-    timer.stop = function()
-    {
+    timer.stop = function() {
         //console.log("timer stop");
         clearInterval(this.interval);
-
     };
 
-    timer.update = function()
-    {
-        timer.time += 1000 / timer.fps;
-        timer.timeLap += 1000 / timer.fps;
+    timer.update = function() {
+        timer.time += (1000 / timer.fps)*debugMultiplier;
+        timer.timeLap += (1000 / timer.fps)*debugMultiplier;
         timer.callback(timer.time, timer.timeLap);
     };
+    
     timer.resetLap = function() {
         this.timeLap = 0;
     };
@@ -146,6 +139,7 @@ var Controller = function() {
     this.updateNextStep = function() {
         controller.view.updateNextStep(controller.model);
     };
+    
     this.timer = new Timer(controller.update);
     this.view = new View();
 };
@@ -157,6 +151,7 @@ var View = function() {
     this.stepsNextView = ["#firstNextStep", "#secondNextStep"];
     this.cursorView = 1;
     this.beginTransition = false;
+    this.totalWidth = 0;
     this.initTimeline = function(model) {
         cycler();
         var steps = model.steps;
@@ -167,9 +162,10 @@ var View = function() {
     };
 
     this.insertStep = function(duration, type, maxTime) {
-        var ref = $(".emptyBar").width();
-        var width = Math.round(duration / maxTime * ref - 2);
-
+        var ref = $(".emptyBar").width() - 2;
+//        var width = Math.round(duration / maxTime * ref);
+        var width = ((duration*ref)/maxTime) - 1;
+        view.totalWidth += width;
         $(".emptyBar").append("<div class='stepBox " + type + "' style='width:" + width + "px'></div>");
     };
 
@@ -302,7 +298,8 @@ function cycler() {
     cycle = $('#steps').cycle({
         fx: 'scrollLeft',
         timeout: 0,
-        after: controller.updateNextStep
+        after: controller.updateNextStep,
+        speed: 200
     });
 
     cycleNext = $('#next_steps').cycle({
