@@ -110,3 +110,26 @@ footer .credit {
 
 /* FIN CSS PARTIAL MAIN_VIEW */
 
+/* DEBUT CSS EXERCISE */
+.exercise {
+    text-align: left;
+    overflow: hidden;
+}
+
+.exercise .exerciseTitle {
+    font-size: 3em;
+}
+
+.exercise .exercisePicture.pull-right {
+    margin-right: 50px;
+}
+
+.exercise .exercisePicture.pull-left {
+    margin: 0 50px;
+}
+
+.exercises hr.exerciseSeparator {
+    margin: 80px 0;
+}
+/* FIN CSS EXERCISE */
+
