@@ -1,10 +1,36 @@
-<div id="smwApp" class="container">
-    <div id="step"> 
-        <div>{{currentStep.name}}</div>
-        <img src="{{currentStep.picture}}" />
-        <div data-smw-chrono="currentStep.execTime"></div>
+<div id="smwApp">
+
+    <div id="steps" class="pics"> 
+        <div id="firstStep" class="">
+            <div class="title"></div>
+            <img class="img" src="" width="300" height="300"/>
+            <div class="timeLap"></div>
+        </div>
+        <div id="secondStep" class="">
+            <div class="title"></div>
+            <img class="img" src="" width="300" height="300"/>
+            <div class="timeLap"></div>
+        </div>
     </div> 
-    <div id="next_step"> 
-        
+    <div id="next_steps" class="pics2"> 
+        <div id="firstNextStep" class="">
+            <div class="title"></div>
+            <div class="img"></div>
+            <div class="timeLap"></div>
+        </div>
+        <div id="secondNextStep" class=""> 
+            <div class="title"></div>
+            <div class="img"></div>
+            <div class="timeLap"></div>
+        </div>
     </div>    
+</div>
+<div id="timeline">
+    
+    <div class="emptyBar">
+    </div>
+    <div class="fullBar"></div>
+    <div class="timing">0:24</div>
+    <div class="node inactive"></div>
+    <i class="cursor icon-eject"></i>
 </div>
