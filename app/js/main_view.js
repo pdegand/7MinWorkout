@@ -1,5 +1,7 @@
 $(document).on("smwReady", function() {
     launch();
+console.log(document.body.clientHeight);
+$("#smwApp").css("height",document.body.clientHeight-320);
 
 });
 
