@@ -12,9 +12,9 @@
             <header class="navbar navbar-static-top">
                 <div class="navbar-inner">
                     <div class="container">
-                        <a class="logo navbar-text">7MinWorkout</a>
+                        <a href="./" class="brand"><img alt="7MinWorkout" src="./img/logo.png"></a>
                         <ul class="nav nav-pills pull-right menu">
-                            <li class="active"><a>Index</a></li>
+                            <li class="active"><a href="./">Home</a></li>
                             <li><a href="#">Learn The Exercices</a></li>
                             <li><a href="#">What is this ?!</a></li>
                         </ul>                    
@@ -24,7 +24,6 @@
             
             <div id="pageContent" class="container">
                 <div data-ng-view></div>
-                <div class="push"></div>
             </div>
             <div id="push"></div>
         </div>
@@ -42,6 +41,7 @@
         -->
         <!-- Libraries -->
         <script src="lib/jquery.js"></script>
+        <script src="lib/jquery.cycle.all.js"></script>
         <script src="lib/angular/angular.js"></script>
         <script src="lib/angular/angular-resource.js"></script>
         <script src="lib/bootstrap.js"></script>
@@ -50,9 +50,9 @@
         <!-- Custom JS -->
         <script src="js/app.js"></script>
         <script src="js/services.js"></script>
+        <script src="js/main_view.js"></script>
         <script src="js/controllers.js"></script>
         <script src="js/filters.js"></script>
         <script src="js/directives.js"></script>
-        <script src="js/main_view.js"></script>
     </body>
 </html>
