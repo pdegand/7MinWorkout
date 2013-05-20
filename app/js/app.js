@@ -6,5 +6,6 @@ angular.module('smwApp', ['ngResource', 'smwApp.filters', 'smwApp.services', 'sm
         config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/home', {templateUrl: 'partials/home.html'});
         $routeProvider.when('/smw', {templateUrl: 'partials/main_view.html', controller: 'MainCtrl'});
-        $routeProvider.otherwise({redirectTo: '/home'});
+        $routeProvider.when('/timeline', {templateUrl: 'partials/timeline.html'});
+        $routeProvider.otherwise({redirectTo: '/smw'});
     }]);

@@ -5,7 +5,6 @@ html, body {
 
 #wrap {
     min-height: 100%;
-    height: auto !important;
     height: 100%;
     margin: 0 auto -60px;
 }
@@ -93,7 +92,7 @@ div.break{
 }
 
 div.hard{
-    background-color:#C03000;
+    background-color:red;
 }
 
 .pics2 div {   
@@ -120,3 +119,75 @@ div.hard{
 }
 /* FIN CSS PARTIAL MAIN_VIEW */
 
+/* CSS TIMELINE */
+
+#timeline{
+    width:70%;
+    margin:auto;
+    height:50px;
+    background-color:white;
+    position:relative;
+}
+
+.emptyBar{
+    position:absolute;
+    left:0;
+    top:15px;
+    background-color:lightgrey;
+    height:8px;
+    width:100%;
+    border:1px solid black;
+}
+
+.fullBar{
+    position:absolute;
+    left:0;
+    top:15px;
+    width:0px;
+    background-color:white;
+    height:8px;
+    border:1px solid black;
+    opacity:0.50;
+}
+
+.timing{
+    position:absolute;
+    left:0px;
+    top:35px;
+    font-weight:bold;
+}
+
+.box{
+    height:8px;
+    float:left;
+    opacity:1;
+    border-right:1px solid black;
+}
+.node{
+  background-image: url("../img/node.png");
+  background-repeat: no-repeat;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  top:7px;
+  left:100%;
+  position:absolute;
+  z-index:2;
+}
+
+.cursor{
+    position:absolute;
+    top:25px;
+    left:-7px;
+    /*background-image: url("../img/fleche.png");*/
+}
+.node.active{
+        background-image: url("../img/node_active.png");  
+
+}
+
+.node.inactive{
+    background-image: url("../img/node.png");  
+}
+
+/* FIN CSS TIMELINE */
