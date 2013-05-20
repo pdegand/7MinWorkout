@@ -4,7 +4,7 @@
 
 angular.module('smwApp.controllers', []).
         controller('MainCtrl', function($scope, Steps) {
-
+    $(document).trigger("smwReady");
     $scope.steps = Steps.query(function() {
         console.log("Steps loaded. currentStep set to index 0");
         $scope.currentStepIndex = 0;
