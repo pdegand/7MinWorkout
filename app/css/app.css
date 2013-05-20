@@ -130,7 +130,8 @@ div.hard{
 }
 
 .picsStyle .title {
-    font-size:100px;
+    font-size:4em;
+    height: 100px;
     line-height: 100px;
     text-align:center;
     color:#f89406;

@@ -3,7 +3,6 @@ $(document).on("smwReady", function() {
 
 });
 
-
 var cursor = 1;
 var debugMultiplier = 1;
 
