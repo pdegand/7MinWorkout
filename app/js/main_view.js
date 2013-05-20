@@ -5,7 +5,6 @@ $("#smwApp").css("height",document.body.clientHeight-320);
 
 });
 
-
 var cursor = 1;
 var debugMultiplier = 1;
 
