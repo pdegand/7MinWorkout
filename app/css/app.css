@@ -113,7 +113,7 @@ div.break{
 }
 
 div.hard{
-    background-color:red;
+    background-color:#f89406;
 }
 
 .pics2 div {   
@@ -158,7 +158,7 @@ div.hard{
   font-size:120px; 
   margin-top:50px;
   line-height:120px;
-  color:#f89406;
+  color:#7adb83;
 }
 .pics2 .title{
     font-size:50px;
@@ -217,7 +217,7 @@ div.hard{
   height: 26px;
   padding: 0;
   top:7px;
-  left:100%;
+  left:99%;
   position:absolute;
   z-index:2;
 }

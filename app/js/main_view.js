@@ -209,7 +209,7 @@ var View = function() {
         
         if(model.cursor+2 < model.steps.length)
             $(view.stepsNextView[view.cursorView]+ " .title").html(model.steps[model.cursor+2].name);
-        else $(view.stepsNextView[view.cursorView]+ " .title").html("");
+        else $(view.stepsNextView[view.cursorView]+ " .title").html("END");
 
         view.cursorView = 1-view.cursorView;
         view.beginTransition = false;
