@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-ng-app="smwApp">
+<html lang="fr" data-ng-app="smwApp">
     <head>
         <meta charset="utf-8">
         <title>7 Min Workout</title>
@@ -14,9 +14,15 @@
                     <div class="container">
                         <a href="./" class="brand"><img alt="7MinWorkout" src="./img/logo.png"></a>
                         <ul class="nav nav-pills pull-right menu">
-                            <li data-match-route="/home"><a href="#">Home</a></li>
-                            <li data-match-route="/exercises"><a href="#/exercises">Learn The Exercises</a></li>
-                            <li data-match-route="/infos"><a href="#/infos">What is this ?!</a></li>
+                            <li data-match-route="/home">
+                                <a href="#/home" data-l10n-text="header.home">Home</a>
+                            </li>
+                            <li data-match-route="/exercises">
+                                <a href="#/exercises" data-l10n-text="header.exercises">Learn The Exercises</a>
+                            </li>
+                            <li data-match-route="/infos">
+                                <a href="#/infos" data-l10n-text="header.infos">What is this ?!</a>
+                            </li>
                         </ul>                    
                     </div>
                 </div>
@@ -44,15 +50,17 @@
         <script src="lib/jquery.cycle.all.js"></script>
         <script src="lib/angular/angular.js"></script>
         <script src="lib/angular/angular-resource.js"></script>
+        <script src="lib/angular/i18n/angular-locale_fr-fr.js"></script>
+        <script src="lib/angular-l10n/l10n-with-tools.min.js"></script>
         <script src="lib/bootstrap.js"></script>
 
         <!-- Custom JS -->
         <script src="js/app.js"></script>
         <script src="js/services.js"></script>
-        
+        <script src="js/directives.js"></script>
         <script src="js/controllers.js"></script>
         <script src="js/filters.js"></script>
-        <script src="js/directives.js"></script>
+        <script src="js/translate.js"></script>
         <script src="js/main_view.js"></script>
     </body>
 </html>

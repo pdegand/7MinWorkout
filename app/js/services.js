@@ -4,6 +4,7 @@
 
 angular.module('smwApp.services', []).
   value('version', '0.1').
-  factory('Steps',function($resource) {
+  factory('Steps',function($resource, $locale) {
+      console.log($locale.id);
       return $resource('data/exercises.json');
   });
