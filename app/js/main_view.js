@@ -1,7 +1,7 @@
-$(document).on("smwReady",function() {
+$(document).on("smwReady", function() {
     launch();
-    
-})
+
+});
 
 
 var cursor = 1;
@@ -24,11 +24,21 @@ var Model = function() {
     this.maxTime = 0;
     this.init = function() {
         this.cursor = 0;
-        this.addStep("Jumping Jack", "hard", 5, "img/jumping-jacks.png");
-        this.addStep("Break", "break", 2, "");
-        this.addStep("Push Up", "hard", 5, "img/push-up.png");
-        this.addStep("Break", "break", 2, "");
-        this.addStep("WallSit", "hard", 5, "img/wall-sit.png");
+        $.ajax({
+            url: 'data/exercises.json',
+            method: 'get',
+            contentType: 'JSON',
+            async: false,
+            success: function(data) {
+                for (index in data) {
+                    var exercise = data[index];
+                    model.addStep(exercise.name, "hard", exercise.duration, exercise.picture);
+                    if (exercise.break) {
+                        model.addStep("Break", "break", exercise.break, "");
+                    }
+                }
+            }
+        });
     };
 
     this.addStep = function(name, type, duration, img) {
@@ -67,30 +77,30 @@ var Timer = function(callback) {
     this.callback = callback;
     timer.start = function()
     {
-        console.log("timer start");
+        //console.log("timer start");
         this.time = 0;
         timer.time = 0;
         timer.timeLap = 0;
         this.interval = setInterval(timer.update, 1000 / timer.fps);
-    }
+    };
 
     timer.stop = function()
     {
-        console.log("timer stop");
+        //console.log("timer stop");
         clearInterval(this.interval);
 
-    }
+    };
 
     timer.update = function()
     {
         timer.time += 1000 / timer.fps;
         timer.timeLap += 1000 / timer.fps;
         timer.callback(timer.time, timer.timeLap);
-    }
+    };
     timer.resetLap = function() {
         this.timeLap = 0;
-    }
-}
+    };
+};
 
 
 //setInterval(monTimer.update, 1000);
@@ -103,43 +113,42 @@ var Controller = function() {
         controller.model.init();
         controller.view.initTimeline(controller.model);
         controller.view.initSlideshow(controller.model);
-    },
-            this.run = function() {
-        console.log("run");
+    };
+    
+    this.run = function() {
+        //console.log("run");
         this.timer.start();
-    },
-            this.stop = function() {
-        console.log("stop");
-    },
-            this.update = function(time, timeLap) {
-
+    };
+    
+    this.stop = function() {
+        //console.log("stop");
+    };
+    
+    this.update = function(time, timeLap) {
         var currentStep = controller.model.getCurrent();
-
-        if (timeLap / 1000 >= currentStep.duration)
-        {
+        if (timeLap / 1000 >= currentStep.duration) {
             controller.timer.resetLap();
             if (!controller.model.next())
                 controller.timer.stop();
-             controller.view.updateSlideshow(controller.model, timeLap,true);
+            controller.view.updateSlideshow(controller.model, timeLap, true);
         }
-        controller.view.updateSlideshow(controller.model, timeLap,false);
+        controller.view.updateSlideshow(controller.model, timeLap, false);
         controller.view.updateTimeLine(time / 1000, controller.model.maxTime);
-        
-
-    }
+    };
+    
     this.nextStep = function() {
-        console.log("nextStep");
-    },
-            this.updateView = function(time, timeLap) {
-        
-       
-    }
-    this.updateNextStep = function(){
+        //console.log("nextStep");
+    };
+    
+    this.updateView = function(time, timeLap) {
+    };
+    
+    this.updateNextStep = function() {
         controller.view.updateNextStep(controller.model);
-    }
+    };
     this.timer = new Timer(controller.update);
     this.view = new View();
-}
+};
 
 
 var View = function() {
@@ -152,22 +161,20 @@ var View = function() {
         cycler();
         var steps = model.steps;
         $(".emptyBar").empty();
-        for (var i = 0; i < steps.length; i++)
-        {
+        for (var i = 0; i < steps.length; i++) {
             view.insertStep(steps[i].duration, steps[i].type, model.maxTime);
         }
-    }
+    };
 
     this.insertStep = function(duration, type, maxTime) {
         var ref = $(".emptyBar").width();
         var width = Math.round(duration / maxTime * ref - 2);
 
         $(".emptyBar").append("<div class='stepBox " + type + "' style='width:" + width + "px'></div>");
-    }
+    };
 
     this.updateTimeLine = function(timing, maxTime) {
-        if (timing < maxTime)
-        {
+        if (timing < maxTime) {
             var ref = $(".emptyBar").width();
             var position = ref / maxTime * timing;
 
@@ -175,80 +182,72 @@ var View = function() {
             $(".timing").css('left', position - 11);
             $(".cursor").css('left', position - 7);
             $(".timing").html(format(Math.round(timing, 2)));
-        }
-        else {
+        } else {
             $(".node").removeClass("inactive");
             $(".node").addClass("active");
             $(".cursor").fadeOut();
             $(".timing").fadeOut();
 
         }
-    }
+    };
 
     this.initSlideshow = function(model) {
         $(view.stepsView[0] + " .title").html(model.steps[0].name);
-        $(view.stepsView[0] + " .img").attr("src",model.steps[0].img);
+        $(view.stepsView[0] + " .img").attr("src", model.steps[0].img);
         //$(view.stepsView[1]+ " .title").html(model.steps[1].name)
-        $(view.stepsNextView[0]+ " .title").html(model.steps[1].name)
+        $(view.stepsNextView[0] + " .title").html(model.steps[1].name)
         //$(view.stepsNextView[1]+ " .title").html(model.steps[2].name)
-    }
-    this.updateNextStep = function(model){
-        var p = model.cursor+1;
-        //console.log("updateNextStep : " +view.cursorView + " - " + p );
-        if(model.cursor+1 < model.steps.length)
-            {
-            $(view.stepsView[view.cursorView]+ " .title").html(model.steps[model.cursor+1].name);
-            $(view.stepsView[view.cursorView]+ " .img").attr("src",model.steps[model.cursor+1].img);
-            }
-        else 
-            {
-                $(view.stepsView[view.cursorView]+ " .title").html("");
-                $(view.stepsView[view.cursorView]+ " .img").remove();
-            }
-        
-        
-        if(model.cursor+2 < model.steps.length)
-            $(view.stepsNextView[view.cursorView]+ " .title").html(model.steps[model.cursor+2].name);
-        else $(view.stepsNextView[view.cursorView]+ " .title").html("");
-
-        view.cursorView = 1-view.cursorView;
-        view.beginTransition = false;
-    }
-    
-    this.updateSlideshow = function(model,timeLap,all) {
-        if (model.cursor < model.steps.length)
-            {
-                var time = Math.round((model.steps[model.cursor].duration - Math.round(timeLap/100)/10)*10)/10;
-                $(view.stepsView[0]+ " .timeLap").html(time);
-                $(view.stepsView[1]+ " .timeLap").html(time);
-                console.log(all);
-            if(all)
-                {
-                view.beginTransition = true;
-                }
-                //console.log();
-             if(view.beginTransition)
-                  $(view.stepsView[view.cursorView]+ " .timeLap").html("");
-                
-                
-            }
-        else
-            {
-            $(view.stepsView[model.cursor % 2]+ " .title").html("");
-            }
-        if(all){
-        $('#steps').cycle("resume", true);
-        $('#next_steps').cycle("resume", true);
+    };
+    this.updateNextStep = function(model) {
+        var p = model.cursor + 1;
+        ////console.log("updateNextStep : " +view.cursorView + " - " + p );
+        if (model.cursor + 1 < model.steps.length) {
+            $(view.stepsView[view.cursorView] + " .title").html(model.steps[model.cursor + 1].name);
+            $(view.stepsView[view.cursorView] + " .img").attr("src", model.steps[model.cursor + 1].img);
+        } else {
+            $(view.stepsView[view.cursorView] + " .title").html("");
+            $(view.stepsView[view.cursorView] + " .img").remove();
         }
-    }
 
-}
+
+        if (model.cursor + 2 < model.steps.length)
+            $(view.stepsNextView[view.cursorView] + " .title").html(model.steps[model.cursor + 2].name);
+        else
+            $(view.stepsNextView[view.cursorView] + " .title").html("");
+
+        view.cursorView = 1 - view.cursorView;
+        view.beginTransition = false;
+    };
+
+    this.updateSlideshow = function(model, timeLap, all) {
+        if (model.cursor < model.steps.length) {
+            var time = Math.round((model.steps[model.cursor].duration - Math.round(timeLap / 100) / 10) * 10) / 10;
+            $(view.stepsView[0] + " .timeLap").html(time);
+            $(view.stepsView[1] + " .timeLap").html(time);
+            //console.log(all);
+            if (all) {
+                view.beginTransition = true;
+            }
+            ////console.log();
+            if (view.beginTransition) {
+                $(view.stepsView[view.cursorView] + " .timeLap").html("");
+            }
+        } else {
+            $(view.stepsView[model.cursor % 2] + " .title").html("");
+        }
+        if (all) {
+            $('#steps').cycle("resume", true);
+            $('#next_steps').cycle("resume", true);
+        }
+    };
+
+};
 
 function launch() {
-    console.log("launch");
-        controller = new Controller();
-        controller.init();
-        controller.run();
+    //console.log("launch");
+    controller = new Controller();
+    controller.init();
+    controller.run();
 }
 
 
@@ -270,14 +269,13 @@ function updateTimer()
         $(".node").addClass("active");
         $(".cursor").fadeOut();
         $(".timing").fadeOut();
-
     }
 }
 
 function removeAllNode() {
     $(".node").each(function() {
         $(this).remove();
-    })
+    });
 }
 
 function insertNode(time, type) {
@@ -289,13 +287,12 @@ function insertNode(time, type) {
 function format(sec)
 {
     var count = 0;
-    while (sec > 60)
-    {
+    while (sec > 60) {
         count++;
         sec -= 60;
     }
     if (sec < 10)
-        return count + ":0" + sec
+        return count + ":0" + sec;
     else
         return count + ":" + sec;
 }
@@ -305,12 +302,12 @@ function cycler() {
     cycle = $('#steps').cycle({
         fx: 'scrollLeft',
         timeout: 0,
-        after:controller.updateNextStep
+        after: controller.updateNextStep
     });
 
     cycleNext = $('#next_steps').cycle({
         fx: 'scrollLeft',
-        timeout: 0,
+        timeout: 0
     });
     //  init();
 }
