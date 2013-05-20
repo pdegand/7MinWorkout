@@ -9,14 +9,14 @@
     </head>
     <body>
         <div id="wrap">
-            <header data-ng-controller="navbarCtrl" class="navbar navbar-static-top">
+            <header class="navbar navbar-static-top" bs-navbar>
                 <div class="navbar-inner">
                     <div class="container">
-                        <a href="./"class="brand"><img alt="7MinWorkout" src="./img/logo.png"></a>
+                        <a href="./" class="brand"><img alt="7MinWorkout" src="./img/logo.png"></a>
                         <ul class="nav nav-pills pull-right menu">
-                            <li class="active"><a href="./">Home</a></li>
-                            <li><a href="#/exercises">Learn The Exercises</a></li>
-                            <li><a href="#/infos">What is this ?!</a></li>
+                            <li data-match-route="/home"><a href="#">Home</a></li>
+                            <li data-match-route="/exercises"><a href="#/exercises">Learn The Exercises</a></li>
+                            <li data-match-route="/infos"><a href="#/infos">What is this ?!</a></li>
                         </ul>                    
                     </div>
                 </div>
