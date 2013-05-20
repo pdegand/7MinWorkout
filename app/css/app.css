@@ -238,3 +238,28 @@ div.hard{
 }
 
 /* FIN CSS TIMELINE */
+
+
+
+/* DEBUT CSS EXERCISE */
+.exercise {
+    text-align: left;
+    overflow: hidden;
+}
+
+.exercise .exerciseTitle {
+    font-size: 3em;
+}
+
+.exercise .exercisePicture.pull-right {
+    margin: 0 50px;
+}
+
+.exercise .exercisePicture.pull-left {
+    margin: 0 50px;
+}
+
+.exercises hr.exerciseSeparator {
+    margin: 80px 0;
+}
+/* FIN CSS EXERCISE */

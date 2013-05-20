@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="box drop-shadow exercises">
+        <div data-ng-repeat="exercise in exercises">
+            <div  class="exercise">
+                <img class="exercisePicture" ng-class-odd="'pull-right'" ng-class-even="'pull-left'" data-ng-src="{{exercise.picture}}"/>
+                <h2 class="exerciseTitle">{{exercise.name}}</h2>
+                <p class="lead">{{exercise.description}}</p> 
+            </div>
+            <hr class="exerciseSeparator">
+        </div>
+        <a class="btn btn-maxi-large btn-warning" href="#/smw">Start Now !</a>
+    </div>
+
+</div>

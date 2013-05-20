@@ -8,21 +8,21 @@
         <link rel="stylesheet" href="css/bootstrap/bootstrap-responsive.css"/>      
     </head>
     <body>
-        <div id="wrap" style="width:100%;height:100%">
-            <header class="navbar navbar-static-top">
+        <div id="wrap">
+            <header class="navbar navbar-static-top" data-bs-navbar>
                 <div class="navbar-inner">
                     <div class="container">
                         <a href="./" class="brand"><img alt="7MinWorkout" src="./img/logo.png"></a>
                         <ul class="nav nav-pills pull-right menu">
-                            <li class="active"><a href="./">Home</a></li>
-                            <li><a href="#">Learn The Exercices</a></li>
-                            <li><a href="#">What is this ?!</a></li>
+                            <li data-match-route="/home"><a href="#">Home</a></li>
+                            <li data-match-route="/exercises"><a href="#/exercises">Learn The Exercises</a></li>
+                            <li data-match-route="/infos"><a href="#/infos">What is this ?!</a></li>
                         </ul>                    
                     </div>
                 </div>
             </header>
-            
-            <div id="pageContent" class="container">
+
+            <div id="pageContent">
                 <div data-ng-view></div>
             </div>
             <div id="push"></div>
