@@ -96,7 +96,6 @@ footer .credit {
     height: 530px;
     clear: both;
     position: relative;
-    font-size: 4vw;
     padding: 2%;
 }
 
@@ -158,13 +157,48 @@ div.hard {
     position: absolute;
 }
 
-#firstStep {
-    width:100%;
+
+.currentExercise {
+    
 }
 
-#secondStep {
-    width:100%;
+.currentExercise .step {
+    width: 100%;
+    height: 100%;
 }
+
+.currentExercise .step .title {
+    height: 60px;
+    line-height: 60px;
+    font-size: 50px;
+    color: #f89406;
+}
+.currentExercise .desc {
+    width: 200px;
+    max-width: 200px;
+    height: 200px;
+    max-height: 200px;
+    line-height: 200px;
+    margin-top: 135px;
+}
+
+.currentExercise .desc.pull-left {
+    margin-left: 25%;
+}
+
+.currentExercise .desc.pull-right {
+    margin-right: 25%;
+}
+
+.currentExercise .step .img {
+}
+
+.currentExercise .step .timeLap {
+    color: #f89406;
+    font-size: 100px;
+}
+
+
 /* FIN CSS PARTIAL MAIN_VIEW */
 
 /* CSS TIMELINE */
@@ -264,3 +298,20 @@ div.hard {
     margin: 80px 0;
 }
 /* FIN CSS EXERCISE */
+
+/* Custom Responsive values */
+/* Based on Twitter Bootstrap responsive media queries */
+/* Large desktop */
+@media (min-width: 1200px) {
+    
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+    
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+    
+}

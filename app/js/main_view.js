@@ -4,7 +4,7 @@ $(document).on("smwReady", function() {
 });
 
 var cursor = 1;
-var debugMultiplier = 1;
+var debugMultiplier = 0;
 
 var timing = 0;
 var maxTime = 8;
