@@ -165,7 +165,7 @@ var View = function() {
 //        var width = Math.round(duration / maxTime * ref);
         var width = ((duration*ref)/maxTime) - 1;
         view.totalWidth += width;
-        $(".emptyBar").append("<div class='stepBox " + type + "' style='width:" + width + "px'></div>");
+        $(".emptyBar").append('<div class="stepBox ' + type + '" style="width:' + width + 'px"></div>');
     };
 
     this.updateTimeLine = function(timing, maxTime) {

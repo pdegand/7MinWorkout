@@ -33,7 +33,16 @@ header {
 }
 
 .box {
-    background-color: white;
+    -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+    background-color: #ffffff;
+    background-color: #fafafa;
+    background-image: -moz-linear-gradient(bottom, #ffffff, #f2f2f2);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
+    background-image: -webkit-linear-gradient(bottom, #ffffff, #f2f2f2);
+    background-image: -o-linear-gradient(bottom, #ffffff, #f2f2f2);
+    background-image: linear-gradient(to top, #ffffff, #f2f2f2);
     padding:30px;
     border-radius: 10px;
     border: 1px solid #aaa;
@@ -82,40 +91,41 @@ footer .credit {
 
 /* CSS PARTIAL MAIN_VIEW */
 
-#smwApp{
-/*    box-shadow: 2px 2px rgba(0, 0, 0, 0.3);*/
-    height: 580px;
+#smwApp {
+    /*    box-shadow: 2px 2px rgba(0, 0, 0, 0.3);*/
+    height: 530px;
     clear: both;
     position: relative;
+    font-size: 4vw;
+    padding: 2%;
 }
 
-#smwApp #steps{
+#smwApp #steps {
     width: 78%;
     height: 100%;
     float: left;
-    background-color:white;
     border-right:5px solid #7adb83;
- 
+
 }
 
 
-#smwApp #next_steps{
+#smwApp #next_steps {
     width: 20%;
     height: 100%;
     float: right;
 }
 
 #smwApp div {  
-    
+
 
 } 
 
-div.break{
-    background-color:lightblue;
+div.break {
+    background-color:#7adb83;
 }
 
-div.hard{
-    background-color:red;
+div.hard {
+    background-color:#f89406;
 }
 
 .pics2 div {   
@@ -123,25 +133,29 @@ div.hard{
     height: 100%; 
     top:  0; 
     left: 0 ;
-    font-size:4em;
     text-align:center;
-    background-color:white;
     padding-top:20%;
 }
 
 .picsStyle .title {
-    font-size:4em;
-    height: 100px;
-    line-height: 100px;
+    height: 10%;
+    line-height: 100%;
     text-align:center;
     color:#f89406;
     font-weight:bold;
 }
 
 .picsStyle .img {
-    bottom: 200px;
-    left: 200px;
-    margin: 6em 3em;
+    width: 30%;
+    max-width: 200px;
+}
+
+.picsStyle .timeLap {
+    font-size: 5vw;
+    margin:15%;
+    line-height:100%;
+    color:#f89406;
+    position: absolute;
 }
 
 #firstStep {
@@ -150,20 +164,6 @@ div.hard{
 
 #secondStep {
     width:100%;
-}
-
-.pics .timeLap {
-  font-size:120px; 
-  margin-top:50px;
-  line-height:120px;
-  color:#f89406;
-  margin: 1em;
-}
-
-.pics2 .title{
-    font-size:50px;
-    line-height: 100px;
-    text-align:center;
 }
 /* FIN CSS PARTIAL MAIN_VIEW */
 
@@ -212,15 +212,15 @@ div.hard{
 }
 
 .node {
-  background-image: url("../img/node.png");
-  background-repeat: no-repeat;
-  width: 26px;
-  height: 26px;
-  padding: 0;
-  top: 7px;
-  right: -13px;
-  position: absolute;
-  z-index: 2;
+    background-image: url("../img/node.png");
+    background-repeat: no-repeat;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    top: 7px;
+    right: -13px;
+    position: absolute;
+    z-index: 2;
 }
 
 .cursor {
@@ -230,7 +230,7 @@ div.hard{
     /*background-image: url("../img/fleche.png");*/
 }
 .node.active {
-        background-image: url("../img/node_active.png");  
+    background-image: url("../img/node_active.png");  
 
 }
 
