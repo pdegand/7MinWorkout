@@ -14,6 +14,10 @@ header {
     font-size: 2em;
 }
 
+.logo {
+    height:92px;
+}
+
 .navbar-static-top .navbar-inner  {
     -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
     -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
@@ -94,6 +98,7 @@ footer .credit {
 #smwApp {
     /*    box-shadow: 2px 2px rgba(0, 0, 0, 0.3);*/
     height: 530px;
+    font-size: 53px;
     clear: both;
     position: relative;
     padding: 2%;
@@ -104,9 +109,7 @@ footer .credit {
     height: 100%;
     float: left;
     border-right:5px solid #7adb83;
-
 }
-
 
 #smwApp #next_steps {
     width: 20%;
@@ -114,90 +117,43 @@ footer .credit {
     float: right;
 }
 
-#smwApp div {  
-
-
-} 
-
-div.break {
-    background-color:#7adb83;
-}
-
-div.hard {
-    background-color:#f89406;
-}
-
-.pics2 div {   
-    width:  100%; 
-    height: 100%; 
-    top:  0; 
-    left: 0 ;
-    text-align:center;
-    padding-top:20%;
-}
-
-.picsStyle .title {
-    height: 10%;
-    line-height: 100%;
-    text-align:center;
-    color:#f89406;
-    font-weight:bold;
-}
-
-.picsStyle .img {
-    width: 30%;
-    max-width: 200px;
-}
-
-.picsStyle .timeLap {
-    font-size: 5vw;
-    margin:15%;
-    line-height:100%;
-    color:#f89406;
-    position: absolute;
-}
-
-
-.currentExercise {
-    
-}
-
-.currentExercise .step {
-    width: 100%;
+.step {
     height: 100%;
+    width: 100%;
 }
 
-.currentExercise .step .title {
-    height: 60px;
-    line-height: 60px;
-    font-size: 50px;
-    color: #f89406;
+.titleWrapper {
+    width: 100%;
+    height: 2em;   
 }
-.currentExercise .desc {
-    width: 200px;
-    max-width: 200px;
-    height: 200px;
+
+.titleWrapper .title {
+    color: #f89406;
+    line-height: 2em;
+}
+
+.imgWrapper {
+    width: 50%;
+    height: 8em;
+    float: left;
+}
+
+.imgWrapper img {
+    vertical-align: middle;
     max-height: 200px;
-    line-height: 200px;
-    margin-top: 135px;
 }
 
-.currentExercise .desc.pull-left {
-    margin-left: 25%;
+.timeLapWrapper {
+    width: 50%;
+    height: 8em;
+    float: right;
 }
 
-.currentExercise .desc.pull-right {
-    margin-right: 25%;
-}
-
-.currentExercise .step .img {
-}
-
-.currentExercise .step .timeLap {
+.timeLapWrapper .timeLap {
     color: #f89406;
-    font-size: 100px;
+    font-size: 3em;
+    line-height: 2.666666666666em;
 }
-
 
 /* FIN CSS PARTIAL MAIN_VIEW */
 
@@ -208,6 +164,14 @@ div.hard {
     margin:auto;
     height:50px;
     position:relative;
+}
+
+div.break {
+    background-color:#7adb83;
+}
+
+div.hard {
+    background-color:#f89406;
 }
 
 .emptyBar{
@@ -303,15 +267,49 @@ div.hard {
 /* Based on Twitter Bootstrap responsive media queries */
 /* Large desktop */
 @media (min-width: 1200px) {
-    
+    .logo {
+        height:92px;
+    }
+
+    #smwApp {
+        height: 530px;
+        font-size: 53px;
+    }
 }
- 
+
+@media (min-width: 980px) and (max-width: 1199px) {
+    .navbar .brand {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    
+    .logo {
+        height:40px;
+    }
+
+    #smwApp {
+        height: 370px;
+        font-size: 37px;
+    }
+}
+
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
-    
+    #smwApp {
+        height: 370px;
+        font-size: 20px;
+    }
 }
- 
+
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+    #smwApp {
+        height: 370px;
+        font-size: 30px;
+    }
     
+    .logo {
+        float: top;
+    }
+
 }

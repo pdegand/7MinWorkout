@@ -1,12 +1,12 @@
 [
     {
-        "name": "Jumping## Jacks #############",
+        "name": "Jumping Jacks",
         "description": "Jump while raising arms and separating legs to sides. Land on forefoot with legs apart and arms overhead. Jump again while lower arms and returning legs to midline. Land on forefoot with arms and legs in original position and repeat.",
         "picture": "img/jumping-jacks.png",
         "duration": 30,
         "break": 10
     }, {
-        "name": "Wall##### Sit filler ########",
+        "name": "Wall Sit",
         "picture": "img/wall-sit.png",
         "description": "Stand comfortably with feet approximately shoulder width apart, with your back against a smooth vertical wall. Slowly slide your back down the wall to assume a position with both your knees and hips at a 90° angle.",
         "duration": 30,
