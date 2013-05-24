@@ -32,7 +32,7 @@ var Model = function() {
                     var exercise = data[index];
                     model.addStep(exercise.name, "hard", exercise.duration, exercise.picture);
                     if (exercise.break) {
-                        model.addStep("Break", "break", exercise.break, "");
+                        model.addStep("Break", "break", exercise.break, "img/break.png");
                     }
                 }
             }
@@ -69,7 +69,7 @@ var Timer = function(callback) {
     var timeLap = 0;
     this.interval = null;
     this.callback = callback;
-    
+
     timer.start = function() {
         //console.log("timer start");
         this.time = 0;
@@ -84,11 +84,11 @@ var Timer = function(callback) {
     };
 
     timer.update = function() {
-        timer.time += (1000 / timer.fps)*debugMultiplier;
-        timer.timeLap += (1000 / timer.fps)*debugMultiplier;
+        timer.time += (1000 / timer.fps) * debugMultiplier;
+        timer.timeLap += (1000 / timer.fps) * debugMultiplier;
         timer.callback(timer.time, timer.timeLap);
     };
-    
+
     timer.resetLap = function() {
         this.timeLap = 0;
     };
@@ -106,16 +106,16 @@ var Controller = function() {
         controller.view.initTimeline(controller.model);
         controller.view.initSlideshow(controller.model);
     };
-    
+
     this.run = function() {
         //console.log("run");
         this.timer.start();
     };
-    
+
     this.stop = function() {
         //console.log("stop");
     };
-    
+
     this.update = function(time, timeLap) {
         var currentStep = controller.model.getCurrent();
         if (timeLap / 1000 >= currentStep.duration) {
@@ -127,18 +127,22 @@ var Controller = function() {
         controller.view.updateSlideshow(controller.model, timeLap, false);
         controller.view.updateTimeLine(time / 1000, controller.model.maxTime);
     };
-    
+
     this.nextStep = function() {
         //console.log("nextStep");
     };
-    
+
     this.updateView = function(time, timeLap) {
     };
-    
+
     this.updateNextStep = function() {
         controller.view.updateNextStep(controller.model);
     };
-    
+
+    this.updateNextNextStep = function() {
+        controller.view.updateNextNextStep(controller.model);
+    };
+
     this.timer = new Timer(controller.update);
     this.view = new View();
 };
@@ -163,7 +167,7 @@ var View = function() {
     this.insertStep = function(duration, type, maxTime) {
         var ref = $(".emptyBar").width() - 2;
 //        var width = Math.round(duration / maxTime * ref);
-        var width = ((duration*ref)/maxTime) - 1;
+        var width = ((duration * ref) / maxTime) - 1;
         view.totalWidth += width;
         $(".emptyBar").append('<div class="stepBox ' + type + '" style="width:' + width + 'px"></div>');
     };
@@ -190,26 +194,31 @@ var View = function() {
         $(view.stepsView[0] + " .title").html(model.steps[0].name);
         $(view.stepsView[0] + " .img").attr("src", model.steps[0].img);
         //$(view.stepsView[1]+ " .title").html(model.steps[1].name)
-        $(view.stepsNextView[0] + " .title").html(model.steps[1].name)
+        $(view.stepsNextView[0] + " .img").attr("src", model.steps[1].img);
+        $(view.stepsNextView[0] + " .timeLap").html(model.steps[1].duration);
         //$(view.stepsNextView[1]+ " .title").html(model.steps[2].name)
     };
     this.updateNextStep = function(model) {
-        var p = model.cursor + 1;
-        ////console.log("updateNextStep : " +view.cursorView + " - " + p );
         if (model.cursor + 1 < model.steps.length) {
             $(view.stepsView[view.cursorView] + " .title").html(model.steps[model.cursor + 1].name);
             $(view.stepsView[view.cursorView] + " .img").attr("src", model.steps[model.cursor + 1].img);
+            $(view.stepsView[view.cursorView] + " .timeLap").html(model.steps[model.cursor + 1].duration);
         } else {
             $(view.stepsView[view.cursorView] + " .title").html("");
             $(view.stepsView[view.cursorView] + " .img").remove();
+            $(view.stepsView[view.cursorView] + " .timeLap").html("");
         }
+    };
 
-
-        if (model.cursor + 2 < model.steps.length)
-            $(view.stepsNextView[view.cursorView] + " .title").html(model.steps[model.cursor + 2].name);
-        else
+    this.updateNextNextStep = function(model) {
+        if (model.cursor + 2 < model.steps.length) {
+            $(view.stepsNextView[view.cursorView] + " .img").attr("src", model.steps[model.cursor + 2].img);
+            $(view.stepsNextView[view.cursorView] + " .timeLap").html(model.steps[model.cursor + 2].duration);
+        } else {
             $(view.stepsNextView[view.cursorView] + " .title").html("");
-
+            $(view.stepsNextView[view.cursorView] + " .img").remove();
+            $(view.stepsNextView[view.cursorView] + " .timeLap").html("");
+        }
         view.cursorView = 1 - view.cursorView;
         view.beginTransition = false;
     };
@@ -303,7 +312,8 @@ function cycler() {
 
     cycleNext = $('#next_steps').cycle({
         fx: 'scrollLeft',
-        timeout: 0
+        timeout: 0,
+        after: controller.updateNextNextStep
     });
     //  init();
 }
@@ -311,30 +321,4 @@ function cycler() {
 function next() {
     $('#steps').cycle("resume", true);
     $('#next_steps').cycle("resume", true);
-    //   update();
 }
-/*
- function update() {
- if (cursor < steps.length)
- $(stepsView[cursor % 2]).html(steps[cursor]);
- else
- $(stepsView[cursor % 2]).html("");
- 
- if (cursor + 1 < steps.length)
- {
- $(stepsNextView[cursor % 2]).html(steps[cursor + 1]);
- }
- else
- {
- $(stepsNextView[cursor % 2]).html("");
- }
- cursor++;
- }
- 
- function init() {
- $(stepsView[0]).html(steps[0])
- $(stepsView[1]).html(steps[1])
- $(stepsNextView[0]).html(steps[1])
- $(stepsNextView[1]).html(steps[2])
- }
- */
