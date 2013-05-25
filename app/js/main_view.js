@@ -1,67 +1,95 @@
+var controller;
+
+
+
 $(document).on("smwReady", function() {
+    if(controller)
+        controller.timer.reset();
+   //     timer.reset();
     launch();
-    $(".node").click(function(){
-        if(controller.timer.status == 1){
-            $(".pauseButton").attr("src","img/start.png");
-            controller.timer.stop(); 
-        }
-        else
-            {
-                controller.timer.restart();
-                $(".pauseButton").attr("src","img/pause.png");
-            }
-    })
-    
-    window.onresize = function(){
+
+    window.onresize = function() {
         controller.view.initTimeline(controller.model);
     }
-    
-    $(".launchButton").click(function(){
-        
-        $(".countdown").css("display","block");
-        $(".launchButton").css("display","none");
+
+    function controlPause() {
+        if (controller.timer.status != -1)
+        {
+            if (controller.timer.status == 1) {
+                pause();
+            }
+            else
+            {
+                resume();
+            }
+        }
+    }
+    function pause() {
+        $(".pauseButton").attr("src", "img/start.png");
+        controller.timer.stop();
+    }
+    function resume() {
+        controller.timer.restart();
+        $(".pauseButton").attr("src", "img/pause.png");
+    }
+
+
+    $(window).keydown(function(e) {
+        switch (e.keyCode) {
+            case 32: // flèche gauche
+                controlPause();
+                break;
+        }
+    });
+
+
+
+    $(".launchButton").click(function() {
+
+        $(".countdown").css("display", "block");
+        $(".launchButton").css("display", "none");
         $("#beginning .countdown").html("3");
-        setTimeout(countDown,1000);
-        setTimeout(countDown,2000);
-        setTimeout(countDown,3000);
+        setTimeout(countDown, 1000);
+        setTimeout(countDown, 2000);
+        setTimeout(countDown, 3000);
     })
     var i = 2;
-    
-    function countDown(){
-           if(i < 0)
-            {
 
-            }
-            else if (i == 0){
-                 $("#beginning .countdown").html("");
-                 
-                         
-                 $("#next_steps").css("display","block");
-                 $("#steps").css("display","block");
-                 cycler();
-                 $("#beginning").fadeOut();
-                 
-                 setTimeout(go,500);
-            }
-        else 
-            {
-                $("#beginning .countdown").html(i);
-                //$("#beginning").fadeOut("fast");
-                //$("#beginning").fadeIn("fast");
-                i--;
-            }
-        
-        
-        
-        
-        
+    function countDown() {
+        if (i < 0)
+        {
+
+        }
+        else if (i == 0) {
+            $("#beginning .countdown").html("");
+
+
+            $("#next_steps").css("display", "block");
+            $("#steps").css("display", "block");
+            cycler();
+            $("#beginning").fadeOut();
+
+            setTimeout(go, 500);
+        }
+        else
+        {
+            $("#beginning .countdown").html(i);
+            //$("#beginning").fadeOut("fast");
+            //$("#beginning").fadeIn("fast");
+            i--;
+        }
+
+
+
+
+
 
     }
-    function go(){
+    function go() {
 
-        
+
         //$("#beginning").fadeOut();
-        
+
         controller.run();
     }
 });
@@ -92,9 +120,9 @@ var Model = function() {
             async: false,
             success: function(data) {
                 for (index in data) {
-                    
+
                     var exercise = data[index];
-                    
+
                     model.addStep(exercise.name, "hard", exercise.duration, exercise.picture);
                     if (exercise.break) {
                         model.addStep("Break", "break", exercise.break, "img/break.png");
@@ -132,7 +160,7 @@ var Timer = function(callback) {
     this.fps = 30;
     var time = 0;
     var timeLap = 0;
-    this.status = 1;
+    this.status = -1;
     this.interval = null;
     this.callback = callback;
 
@@ -141,9 +169,16 @@ var Timer = function(callback) {
         this.time = 0;
         timer.time = 0;
         timer.timeLap = 0;
+        timer.status = 1;
         this.interval = setInterval(timer.update, 1000 / timer.fps);
     };
 
+    timer.reset = function() {
+        clearInterval(this.interval);
+        timer.status = 0;
+        timer.time = 0;
+        timer.timeLap = 0;
+    };
     timer.stop = function() {
         //console.log("timer stop");
         clearInterval(this.interval);
@@ -228,13 +263,13 @@ var View = function() {
     this.beginTransition = false;
     this.totalWidth = 0;
     this.initTimeline = function(model) {
-       // cycler();
+        // cycler();
         var steps = model.steps;
         $(".emptyBar").empty();
         for (var i = 0; i < steps.length; i++) {
             view.insertStep(steps[i].duration, steps[i].type, model.maxTime);
         }
-        
+
     };
 
     this.insertStep = function(duration, type, maxTime) {
@@ -257,7 +292,7 @@ var View = function() {
         } else {
             $(".node").removeClass("inactive");
             $(".node").addClass("active");
-            $(".pauseButton").css("display","none");
+            $(".pauseButton").css("display", "none");
             $(".cursor").fadeOut();
             $(".timing").fadeOut();
 
@@ -327,7 +362,7 @@ function launch() {
     controller = new Controller();
     controller.init();
     //cycler();
-   // controller.run();
+    // controller.run();
 }
 
 
