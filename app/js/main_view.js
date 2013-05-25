@@ -11,10 +11,63 @@ $(document).on("smwReady", function() {
                 $(".pauseButton").attr("src","img/pause.png");
             }
     })
+    
+    window.onresize = function(){
+        controller.view.initTimeline(controller.model);
+    }
+    
+    $(".launchButton").click(function(){
+        
+        $(".countdown").css("display","block");
+        $(".launchButton").css("display","none");
+        $("#beginning .countdown").html("3");
+        setTimeout(countDown,1000);
+        setTimeout(countDown,2000);
+        setTimeout(countDown,3000);
+    })
+    var i = 2;
+    
+    function countDown(){
+           if(i < 0)
+            {
+
+            }
+            else if (i == 0){
+                 $("#beginning .countdown").html("");
+                 
+                         
+                 $("#next_steps").css("display","block");
+                 $("#steps").css("display","block");
+                 cycler();
+                 $("#beginning").fadeOut();
+                 
+                 setTimeout(go,500);
+            }
+        else 
+            {
+                $("#beginning .countdown").html(i);
+                //$("#beginning").fadeOut("fast");
+                //$("#beginning").fadeIn("fast");
+                i--;
+            }
+        
+        
+        
+        
+        
+
+    }
+    function go(){
+
+        
+        //$("#beginning").fadeOut();
+        
+        controller.run();
+    }
 });
 
 var cursor = 1;
-var debugMultiplier = 30;
+var debugMultiplier = 10;
 
 var timing = 0;
 var maxTime = 8;
@@ -39,7 +92,9 @@ var Model = function() {
             async: false,
             success: function(data) {
                 for (index in data) {
+                    
                     var exercise = data[index];
+                    
                     model.addStep(exercise.name, "hard", exercise.duration, exercise.picture);
                     if (exercise.break) {
                         model.addStep("Break", "break", exercise.break, "img/break.png");
@@ -173,12 +228,13 @@ var View = function() {
     this.beginTransition = false;
     this.totalWidth = 0;
     this.initTimeline = function(model) {
-        cycler();
+       // cycler();
         var steps = model.steps;
         $(".emptyBar").empty();
         for (var i = 0; i < steps.length; i++) {
             view.insertStep(steps[i].duration, steps[i].type, model.maxTime);
         }
+        
     };
 
     this.insertStep = function(duration, type, maxTime) {
@@ -270,7 +326,8 @@ function launch() {
     //console.log("launch");
     controller = new Controller();
     controller.init();
-    controller.run();
+    //cycler();
+   // controller.run();
 }
 
 

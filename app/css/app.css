@@ -66,6 +66,29 @@ header {
     border-radius: 6px;
 }
 
+.launchButton{
+    font-size: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -40px;
+}
+
+
+#beginning .countdown{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
+    display:none;
+    line-height: 300px;
+    font-size: 250px;
+    color:#f89406;
+}
 .navbar .navbar-inner {
     padding: 10px 0;
 }
@@ -109,12 +132,14 @@ footer .credit {
     height: 100%;
     float: left;
     border-right:5px solid #7adb83;
+    display:none;
 }
 
 #smwApp #next_steps {
     width: 20%;
     height: 100%;
     float: right;
+    display:none;
 }
 
 .step {
@@ -289,6 +314,16 @@ div.hard {
     cursor:pointer;
 }
 
+#beginning{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    background-color:white;/*#f89406;*/
+    z-index:8;
+    opacity:1;
+}
 /* FIN CSS TIMELINE */
 
 
@@ -335,7 +370,7 @@ div.hard {
         padding-top: 0;
         padding-bottom: 0;
     }
-    
+
     .logo {
         height:40px;
     }
@@ -360,7 +395,7 @@ div.hard {
         height: 370px;
         font-size: 30px;
     }
-    
+
     .logo {
         float: top;
     }
