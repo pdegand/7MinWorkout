@@ -200,7 +200,6 @@ footer .credit {
     line-height: 1.5;
     text-shadow: rgba(0,0,0,.5) 0 2px 1px;
 }
-
 /* FIN CSS PARTIAL MAIN_VIEW */
 
 /* CSS TIMELINE */
@@ -225,7 +224,7 @@ div.hard {
     left:0;
     top:15px;
     background-color:lightgrey;
-    height:8px;
+    height:16px;
     width:100%;
     border: 1px solid black;
 }
@@ -236,7 +235,7 @@ div.hard {
     top:15px;
     width:0px;
     background-color:white;
-    height:8px;
+    height:16px;
     border:1px solid black;
     opacity:0.50;
 }
@@ -246,10 +245,11 @@ div.hard {
     left:0px;
     top:35px;
     font-weight:bold;
+    font-size:16px;
 }
 
 .stepBox {
-    height:8px;
+    height:16px;
     float:left;
     opacity:1;
     border-right:1px solid black;
@@ -258,10 +258,11 @@ div.hard {
 .node {
     background-image: url("../img/node.png");
     background-repeat: no-repeat;
-    width: 26px;
-    height: 26px;
+    background-size:32px;
+    width: 35px;
+    height: 35px;
     padding: 0;
-    top: 7px;
+    top: 8px;
     right: -13px;
     position: absolute;
     z-index: 2;
@@ -271,7 +272,12 @@ div.hard {
     position: absolute;
     top: 25px;
     left: -7px;
-    /*background-image: url("../img/fleche.png");*/
+}
+
+.pauseButton{
+    margin:auto;
+    margin-top:4px;
+    margin-right:2px;
 }
 .node.active {
     background-image: url("../img/node_active.png");  
@@ -280,6 +286,7 @@ div.hard {
 
 .node.inactive {
     background-image: url("../img/node.png");  
+    cursor:pointer;
 }
 
 /* FIN CSS TIMELINE */
@@ -359,3 +366,4 @@ div.hard {
     }
 
 }
+

@@ -1,15 +1,20 @@
 $(document).on("smwReady", function() {
     launch();
-
-    $("#smwApp").click(function(){
-        if(controller.timer.status == 1)
-            controller.timer.stop();
-        else controller.timer.restart();
+    $(".node").click(function(){
+        if(controller.timer.status == 1){
+            $(".pauseButton").attr("src","img/start.png");
+            controller.timer.stop(); 
+        }
+        else
+            {
+                controller.timer.restart();
+                $(".pauseButton").attr("src","img/pause.png");
+            }
     })
 });
 
 var cursor = 1;
-var debugMultiplier = 5;
+var debugMultiplier = 30;
 
 var timing = 0;
 var maxTime = 8;
@@ -196,6 +201,7 @@ var View = function() {
         } else {
             $(".node").removeClass("inactive");
             $(".node").addClass("active");
+            $(".pauseButton").css("display","none");
             $(".cursor").fadeOut();
             $(".timing").fadeOut();
 
