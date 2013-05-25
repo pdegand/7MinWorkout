@@ -29,6 +29,7 @@ angular.module('smwApp.services', []).
                     var current = $(element).attr('href');
                     var pos = current.indexOf('?');
                     if(pos !== -1) current = current.substr(0,pos);
+                    console.log(current);
                     $(element).attr('href', current + '?l=' + localeValue);
                 });
             }

@@ -15,6 +15,9 @@ angular.module('smwApp.controllers', []).
     $scope.exercises = Steps.query(function() {
         console.log('Exercises loaded');
     });
-}).controller('FlagsCtrl', function($scope, $location) {
+}).controller('FlagsCtrl', function($scope, $location, Translator) {
     $scope.$location = $location;
+    $scope.$on('$routeChangeSuccess',function() {
+        Translator.apply();
+    });
 });
