@@ -5,7 +5,8 @@
 angular.module('smwApp', ['ngResource', 'smwApp.filters', 'smwApp.services', 'smwApp.directives', 'smwApp.controllers','l10n','l10n-tools','smw-l10n']).
         config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/home', {
-            templateUrl: 'partials/home.html', 
+            templateUrl: 'partials/smwApp.html', 
+            controller: 'MainCtrl',
             resolve: {localeLabel: function(Translator) { return Translator.apply(); }}
         });
         $routeProvider.when('/infos', {
