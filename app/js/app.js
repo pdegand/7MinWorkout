@@ -5,18 +5,22 @@
 angular.module('smwApp', ['ngResource', 'smwApp.filters', 'smwApp.services', 'smwApp.directives', 'smwApp.controllers','l10n','l10n-tools','smw-l10n']).
         config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/home', {
-            templateUrl: 'partials/home.html'
+            templateUrl: 'partials/home.html', 
+            resolve: {localeLabel: function(Translator) { return Translator.apply(); }}
         });
         $routeProvider.when('/infos', {
-            templateUrl: 'partials/infos_en-us.html'
+            templateUrl: 'partials/infos_en-us.html',
+            resolve: {localeLabel: function(Translator) { return Translator.apply(); }}
         });
         $routeProvider.when('/smw', {
             templateUrl: 'partials/smwApp.html',
-            controller: 'MainCtrl'
+            controller: 'MainCtrl',
+            resolve: {localeLabel: function(Translator) { return Translator.apply(); }}
         });
         $routeProvider.when('/exercises', {
             templateUrl: 'partials/exercises.html', 
-            controller: 'ExercisesCtrl'
+            controller: 'ExercisesCtrl',
+            resolve: {localeLabel: function(Translator) { return Translator.apply(); }}
         });
         $routeProvider.otherwise({redirectTo: '/home'});
     }]).
