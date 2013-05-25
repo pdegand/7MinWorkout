@@ -108,12 +108,16 @@ footer {
     background-image: -webkit-linear-gradient(bottom, #ffffff, #f2f2f2);
     background-image: -o-linear-gradient(bottom, #ffffff, #f2f2f2);
     background-image: linear-gradient(to top, #ffffff, #f2f2f2);
+    
+    text-align: center;
+    margin: 0;
+    padding-top: 20px;
+    height: 40px;
 }
 
-footer .credit {
-    text-align: center;
-    line-height: 60px;
-    margin: 0;
+footer span:last-child {
+    float: right;
+    margin-right: 20px;
 }
 
 /* CSS PARTIAL MAIN_VIEW */

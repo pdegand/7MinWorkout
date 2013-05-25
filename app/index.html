@@ -12,18 +12,25 @@
             <header class="navbar navbar-static-top" data-bs-navbar>
                 <div class="navbar-inner">
                     <div class="container">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
                         <a href="./" class="brand" ><img class="logo" alt="7MinWorkout" src="./img/logo.png"></a>
-                        <ul class="nav nav-pills pull-right menu">
-                            <li data-match-route="/home">
-                                <a href="#/home" data-l10n-text="header.home"></a>
-                            </li>
-                            <li data-match-route="/exercises">
-                                <a href="#/exercises" data-l10n-text="header.exercises"></a>
-                            </li>
-                            <li data-match-route="/infos">
-                                <a href="#/infos" data-l10n-text="header.infos"></a>
-                            </li>
-                        </ul>                    
+                        <div class="nav-collapse collapse">
+                            <ul class="nav nav-pills pull-right menu">
+                                <li data-match-route="/home">
+                                    <a href="#!/home" data-l10n-text="header.home"></a>
+                                </li>
+                                <li data-match-route="/exercises">
+                                    <a href="#!/exercises" data-l10n-text="header.exercises"></a>
+                                </li>
+                                <li data-match-route="/infos">
+                                    <a href="#!/infos" data-l10n-text="header.infos"></a>
+                                </li>
+                            </ul>  
+                        </div>
                     </div>
                 </div>
             </header>
@@ -36,9 +43,14 @@
 
         <footer>
             <div class="container">
-                <p class="credit">
+                <span>
                     2013 - Created by <a href="http://julienlampin.fr">Pierre Degand</a>, <a href="http://julienlampin.fr">Julien Lampin & <a href="http://julienlampin.fr">Matthieu Vandaele</a>
-                </p>
+                </span>
+                <span>
+                    <a href="#!/home?l=fr">
+                        <img src="./img/fr.gif" alt="flag_fr" title="fr" /></a>
+                    <a href="#!/home?l=en"><img src="./img/us.gif" alt="flag_en" title="en"/></a>
+                </span>
             </div>
         </footer>       
 
@@ -50,7 +62,7 @@
         <script src="lib/jquery.cycle.all.js"></script>
         <script src="lib/angular/angular.js"></script>
         <script src="lib/angular/angular-resource.js"></script>
-<!--        <script src="lib/angular/i18n/angular-locale_fr-fr.js"></script>-->
+        <!--        <script src="lib/angular/i18n/angular-locale_fr-fr.js"></script>-->
         <script src="lib/angular-l10n/l10n-with-tools.min.js"></script>
         <script src="lib/bootstrap.js"></script>
 
