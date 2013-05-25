@@ -21,13 +21,13 @@
                         <div class="nav-collapse collapse">
                             <ul class="nav nav-pills pull-right menu">
                                 <li data-match-route="/home">
-                                    <a href="#!/home" data-l10n-text="header.home"></a>
+                                    <a data-smw-translate href="#!/home" data-l10n-text="header.home"></a>
                                 </li>
                                 <li data-match-route="/exercises">
-                                    <a href="#!/exercises" data-l10n-text="header.exercises"></a>
+                                    <a data-smw-translate href="#!/exercises" data-l10n-text="header.exercises"></a>
                                 </li>
                                 <li data-match-route="/infos">
-                                    <a href="#!/infos" data-l10n-text="header.infos"></a>
+                                    <a data-smw-translate href="#!/infos" data-l10n-text="header.infos"></a>
                                 </li>
                             </ul>  
                         </div>
@@ -46,10 +46,9 @@
                 <span>
                     2013 - Created by <a href="http://julienlampin.fr">Pierre Degand</a>, <a href="http://julienlampin.fr">Julien Lampin & <a href="http://julienlampin.fr">Matthieu Vandaele</a>
                 </span>
-                <span>
-                    <a href="#!/home?l=fr">
-                        <img src="./img/fr.gif" alt="flag_fr" title="fr" /></a>
-                    <a href="#!/home?l=en"><img src="./img/us.gif" alt="flag_en" title="en"/></a>
+                <span data-ng-controller="FlagsCtrl">
+                    <a href="#!{{$location.path()}}?l=fr"><img src="./img/fr.gif" alt="flag_fr" title="fr"/></a>
+                    <a href="#!{{$location.path()}}?l=en"><img src="./img/us.gif" alt="flag_en" title="en"/></a>
                 </span>
             </div>
         </footer>       

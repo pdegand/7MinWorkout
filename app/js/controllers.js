@@ -11,10 +11,10 @@ angular.module('smwApp.controllers', []).
         $scope.currentStep = $scope.steps[0];
     });
 
-
 }).controller('ExercisesCtrl', function($scope, Steps) {
     $scope.exercises = Steps.query(function() {
         console.log('Exercises loaded');
     });
+}).controller('FlagsCtrl', function($scope, $location) {
+    $scope.$location = $location;
 });
-
