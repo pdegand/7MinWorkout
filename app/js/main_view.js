@@ -71,8 +71,6 @@ $(document).on("smwReady", function() {
         else
         {
             $("#beginning .countdown").html(i);
-            //$("#beginning").fadeOut("fast");
-            //$("#beginning").fadeIn("fast");
             i--;
         }
     }
@@ -109,7 +107,7 @@ var Model = function() {
 
                     model.addStep(exercise.name, "hard", exercise.duration, exercise.picture);
                     if (exercise.break) {
-                        model.addStep("Break", "break", exercise.break, "img/break.png");
+                        model.addStep("Break", "break", exercise.break, "img/break2.png");
                     }
                 }
             }
@@ -210,7 +208,7 @@ var Controller = function() {
     this.update = function(time, timeLap) {
         var currentStep = controller.model.getCurrent();
         if (timeLap / 1000 >= currentStep.duration) {
-            $.playSound("sounds/tone.mp3");
+            $.playSound("sounds/tone2.mp3");
             //$.playSound("sounds/tone.mp3");
             //$.playSound("sounds/tone.mp3");
             controller.timer.resetLap();
