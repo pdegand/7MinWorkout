@@ -3,6 +3,7 @@ var controller;
 
 
 $(document).on("smwReady", function() {
+    
     if(controller)
         controller.timer.reset();
    //     timer.reset();
@@ -42,7 +43,9 @@ $(document).on("smwReady", function() {
         }
     });
 
-
+    $(".node").click(function() {
+        controlPause();
+    })
 
     $(".launchButton").click(function() {
 
@@ -56,6 +59,7 @@ $(document).on("smwReady", function() {
     var i = 2;
 
     function countDown() {
+        
         if (i < 0)
         {
 
@@ -226,6 +230,9 @@ var Controller = function() {
     this.update = function(time, timeLap) {
         var currentStep = controller.model.getCurrent();
         if (timeLap / 1000 >= currentStep.duration) {
+            $.playSound("sounds/tone.mp3");
+            //$.playSound("sounds/tone.mp3");
+            //$.playSound("sounds/tone.mp3");
             controller.timer.resetLap();
             if (!controller.model.next())
                 controller.timer.stop();
