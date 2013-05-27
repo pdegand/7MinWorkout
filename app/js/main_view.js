@@ -1,22 +1,19 @@
 var controller;
-
-
-
 $(document).on("smwReady", function() {
-    
-    if(controller)
+
+    if (controller)
         controller.timer.reset();
-   //     timer.reset();
+    //     timer.reset();
     launch();
 
     window.onresize = function() {
         controller.view.initTimeline(controller.model);
-    }
+    };
 
     function controlPause() {
-        if (controller.timer.status != -1)
+        if (controller.timer.status !== -1)
         {
-            if (controller.timer.status == 1) {
+            if (controller.timer.status === 1) {
                 pause();
             }
             else
@@ -34,7 +31,6 @@ $(document).on("smwReady", function() {
         $(".pauseButton").attr("src", "img/pause.png");
     }
 
-
     $(window).keydown(function(e) {
         switch (e.keyCode) {
             case 32: // flèche gauche
@@ -45,10 +41,9 @@ $(document).on("smwReady", function() {
 
     $(".node").click(function() {
         controlPause();
-    })
+    });
 
     $(".launchButton").click(function() {
-
         $(".countdown").css("display", "block");
         $(".launchButton").css("display", "none");
         $("#beginning .countdown").html("3");
@@ -59,14 +54,12 @@ $(document).on("smwReady", function() {
     var i = 2;
 
     function countDown() {
-        
-        if (i < 0)
-        {
+
+        if (i < 0) {
 
         }
         else if (i == 0) {
             $("#beginning .countdown").html("");
-
 
             $("#next_steps").css("display", "block");
             $("#steps").css("display", "block");
@@ -82,33 +75,20 @@ $(document).on("smwReady", function() {
             //$("#beginning").fadeIn("fast");
             i--;
         }
-
-
-
-
-
-
     }
     function go() {
-
-
-        //$("#beginning").fadeOut();
-
         controller.run();
     }
 });
 
 var cursor = 1;
-var debugMultiplier = 10;
+var debugMultiplier = 50;
 
 var timing = 0;
 var maxTime = 8;
 var delta = 30;
 //setInterval(updateTimer, delta);
 var memory = 0;
-
-
-
 
 var Model = function() {
     var model = this;
@@ -234,8 +214,10 @@ var Controller = function() {
             //$.playSound("sounds/tone.mp3");
             //$.playSound("sounds/tone.mp3");
             controller.timer.resetLap();
-            if (!controller.model.next())
+            if (!controller.model.next()) {
+                $(document).trigger("redirect");
                 controller.timer.stop();
+            }
             controller.view.updateSlideshow(controller.model, timeLap, true);
         }
         controller.view.updateSlideshow(controller.model, timeLap, false);

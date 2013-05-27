@@ -19,6 +19,10 @@ angular.module('smwApp', ['ngResource', 'smwApp.filters', 'smwApp.services', 'sm
             templateUrl: 'partials/exercises.html',
             controller: 'ExercisesCtrl'
         });
+        $routeProvider.when('/congratulation', {
+            templateUrl: 'partials/congratulation.html',
+            controller: 'CongratCtrl'
+        });
         $routeProvider.otherwise({redirectTo: '/home'});
     }]).
         config(['$locationProvider', function($location) {
