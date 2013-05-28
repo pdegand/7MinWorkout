@@ -209,9 +209,6 @@ var Controller = function() {
     this.update = function(time, timeLap) {
         var currentStep = controller.model.getCurrent();
         if (timeLap / 1000 >= currentStep.duration) {
-            $.playSound("sounds/tone2.mp3");
-            //$.playSound("sounds/tone.mp3");
-            //$.playSound("sounds/tone.mp3");
             controller.timer.resetLap();
             if (!controller.model.next()) {
                 $(document).trigger("redirect");
