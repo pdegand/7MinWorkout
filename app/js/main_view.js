@@ -18,12 +18,12 @@ $("#smwApp").click(function(){
         {
             if (controller.timer.status === 1) {
                 pause();
-                $("#calque").css("display","block");
+                $("#calque").fadeIn();
             }
             else
             {
                 resume();
-                $("#calque").css("display","none");
+                $("#calque").fadeOut();
             }
         }
     }
@@ -46,8 +46,8 @@ $("#smwApp").click(function(){
 
     $(".launchButton").click(function() {
         $("#bigLogo").fadeOut();
-        $(".countdown").css("display", "block");
-        $(".launchButton").css("display", "none");
+        $(".countdown").fadeIn();
+        $(".launchButton").fadeOut();
         $("#beginning .countdown").html("3");
         setTimeout(countDown, 1000);
         setTimeout(countDown, 2000);
