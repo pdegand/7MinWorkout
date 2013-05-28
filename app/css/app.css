@@ -449,6 +449,10 @@ div.hard {
 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
+    .headerSocial {
+        left: 130px;
+    }
+    
     .navbar .brand {
         padding: 0 10px;
     }
