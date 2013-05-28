@@ -112,7 +112,7 @@ footer {
     background-image: -webkit-linear-gradient(bottom, #ffffff, #f2f2f2);
     background-image: -o-linear-gradient(bottom, #ffffff, #f2f2f2);
     background-image: linear-gradient(to top, #ffffff, #f2f2f2);
-    
+
     text-align: center;
     margin: 0;
     padding-top: 20px;
@@ -233,6 +233,21 @@ footer span:last-child {
     line-height: 1.5;
     text-shadow: rgba(0,0,0,.5) 0 2px 1px;
 }
+
+#calque{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: lightgray;
+    opacity: 0.8;
+    z-index: 10;
+    background-image:url("../img/pauseBig.png");
+    background-repeat:no-repeat;
+    background-position:center;
+    display:none;
+}
 /* FIN CSS PARTIAL MAIN_VIEW */
 
 /* CSS TIMELINE */
@@ -332,6 +347,7 @@ div.hard {
     z-index:8;
     opacity:1;
 }
+
 /* FIN CSS TIMELINE */
 
 

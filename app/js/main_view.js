@@ -10,15 +10,20 @@ $(document).on("smwReady", function() {
         controller.view.initTimeline(controller.model);
     };
 
+$("#smwApp").click(function(){
+    controlPause();
+})
     function controlPause() {
         if (controller.timer.status !== -1)
         {
             if (controller.timer.status === 1) {
                 pause();
+                $("#calque").css("display","block");
             }
             else
             {
                 resume();
+                $("#calque").css("display","none");
             }
         }
     }
@@ -37,10 +42,6 @@ $(document).on("smwReady", function() {
                 controlPause();
                 break;
         }
-    });
-
-    $(".node").click(function() {
-        controlPause();
     });
 
     $(".launchButton").click(function() {
