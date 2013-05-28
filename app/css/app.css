@@ -15,7 +15,17 @@ header {
 }
 
 .logo {
-    height:92px;
+    height: 40px;
+}
+
+.logo.big {
+    height: 150px;
+    width: 450px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    margin-top: -75px;
+    margin-left: -225px;
 }
 
 .navbar-static-top .navbar-inner  {
@@ -74,7 +84,7 @@ header {
     font-size: 50px;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 60%;
     margin-left: -150px;
     margin-top: -40px;
 }
@@ -307,11 +317,11 @@ div.hard {
     background-image: url("../img/node.png");
     background-repeat: no-repeat;
     background-size:32px;
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
     padding: 0;
     top: 8px;
-    right: -13px;
+    right: -16px;
     position: absolute;
     z-index: 2;
 }
@@ -395,8 +405,9 @@ div.hard {
 /* Based on Twitter Bootstrap responsive media queries */
 /* Large desktop */
 @media (min-width: 1200px) {
-    .logo {
-        height:92px;
+    
+    .navbar .brand {
+        padding: 0 10px;
     }
 
     #smwApp {
@@ -407,12 +418,7 @@ div.hard {
 
 @media (min-width: 980px) and (max-width: 1199px) {
     .navbar .brand {
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-
-    .logo {
-        height:40px;
+        padding: 0 10px;
     }
 
     #smwApp {
@@ -423,6 +429,11 @@ div.hard {
 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
+    
+    .navbar .brand {
+        padding: 0 10px;
+    }
+    
     #smwApp {
         height: 370px;
         font-size: 20px;
@@ -431,14 +442,14 @@ div.hard {
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+    
+    .navbar .brand {
+        padding: 0 10px;
+    }
+    
     #smwApp {
         height: 370px;
         font-size: 30px;
     }
-
-    .logo {
-        float: top;
-    }
-
 }
 

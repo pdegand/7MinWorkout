@@ -45,6 +45,7 @@ $("#smwApp").click(function(){
     });
 
     $(".launchButton").click(function() {
+        $("#bigLogo").fadeOut();
         $(".countdown").css("display", "block");
         $(".launchButton").css("display", "none");
         $("#beginning .countdown").html("3");
