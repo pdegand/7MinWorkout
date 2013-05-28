@@ -82,11 +82,10 @@ header {
 
 .launchButton{
     font-size: 50px;
-    position: absolute;
-    left: 50%;
+    position: relative;
+    
     top: 60%;
-    margin-left: -150px;
-    margin-top: -40px;
+    margin-top: -35px;
 }
 
 
@@ -405,7 +404,7 @@ div.hard {
 /* Based on Twitter Bootstrap responsive media queries */
 /* Large desktop */
 @media (min-width: 1200px) {
-    
+
     .navbar .brand {
         padding: 0 10px;
     }
@@ -429,11 +428,11 @@ div.hard {
 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
-    
+
     .navbar .brand {
         padding: 0 10px;
     }
-    
+
     #smwApp {
         height: 370px;
         font-size: 20px;
@@ -442,11 +441,11 @@ div.hard {
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
-    
+
     .navbar .brand {
         padding: 0 10px;
     }
-    
+
     #smwApp {
         height: 370px;
         font-size: 30px;

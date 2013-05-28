@@ -4,7 +4,10 @@
 
 angular.module('smwApp.services', []).
         factory('Steps', function($resource) {
-    return $resource('data/exercises.json');
+    return {
+        fr: $resource('data/exercises_fr.json'),
+        en: $resource('data/exercises.json')
+    };
 }).
         factory('Translator', function($location, l10n) {
     return {

@@ -1,0 +1,79 @@
+[
+    {
+        "name": "Saut Bras Levés",
+        "description": "Sautez en écartant les jambes et en rejoignant les mains au-dessus de la tête en les montant latéralement, suivi d'un autre pour le retour en position jambes serrées.",
+        "picture": "img/jumping-jacks.png",
+        "duration": 30,
+        "break": 10
+    }, {
+        "name": "Chaise Murale",
+        "picture": "img/wall-sit.png",
+        "description": "Mettez-vous dos au mur et glissez doucement jusqu'à vous retrouver le dos collé au mur et les genoux formant un angle de 90° avec vos hanches",
+        "duration": 30,
+        "break": 10
+    }, {
+        "name": "Pompes",
+        "picture": "img/push-up.png",
+        "description": "Positionnez vous sur le sol en gardant une distance entre les mains supérieure à la largeur des épaules. Descendre le buste jusqu'à frôler le sol avec la tête, en gardant les abdominaux sous tension. Revenir à la position de départ.",
+        "duration": 30,
+        "break": 10
+    }, {
+        "name": "Abdos Crunch",
+        "picture": "img/abdominal-crunch.png",
+        "description": "Allongez vous sur le dos, les pieds au sol, les genoux fléchis, les mains posées derrière les oreilles avec les coudes écartés, enroulez le bas du dos tout en essayant de garder le ventre rentré. À aucun moment, votre bas du dos ne doit complètement décoller du sol.",
+        "duration": 30,
+        "break": 10
+    }, {
+        "name": "Relevé sur la chaise",
+        "picture": "img/step-up-onto-chair.png",
+        "description": "Positionner le pied de votre première jambe sur la chaise. Montez sur la chaise en tendant votre hanche et genoux de la première jambe, puis de la seconde. Descendez de la même manière, changez de pied puis recommencez.",
+        "duration": 30,
+        "break": 10
+    }, {
+        "name": "Squat",
+        "picture": "img/squat.png",
+        "description":"Mettez vous debout, l’écartement des pieds légèrement inférieur à la largeur du bassin, le buste vertical et le dos droit, descendez les bras tendu en effectuant une flexion des genoux. ",
+        "duration": 30,
+        "break": 10
+    }, {
+        "name": "Appuis sur les triceps",
+        "picture": "img/triceps-dip-on-chair.png",
+        "description": "Asseyez-vous sur un banc ou une chaise. Commencez par les mains à côté ou légèrement sous les hanches. Soulevez sur les mains en ramenant les hanches vers l'avant. Pliez les coudes (pas inférieure à 90 degrés) et abaissez les hanches vers le bas, en les gardant très proches de la chaise. Gardez les épaules vers le bas.", 
+        "duration": 30,
+        "break": 10
+    }, {
+        "name": "Gainage droit",
+        "picture": "img/plank.png",
+        "description": "Allongez-vous à plat ventre sur le sol. Placez les avant-bras, les coudes sur le sol sous les épaules. Placer les jambes collées au sol puis redressez le corps dans la ligne droite. Maintenez la position.",
+        "duration": 30,
+        "break": 10
+    }, {
+        "name": "Courir sur place genou levé",
+        "picture": "img/high-knees-running-in-place.png",
+        "description": "Tenez-vous debout avec vos pieds placés sur la largeur des hanches. Soulevez votre genou droit plus haut que vos hanches. Quand vous baissez votre genou droit vers le bas, commencer à mettre en place votre genou gauche supérieur au niveau de la hanche. Répétez en alternant les jambes et les lever aussi haut que vous le pouvez.",
+        "duration": 30,
+        "break": 10
+    }, {
+        "name": "Lunge",
+        "picture": "img/lunge.png",
+        "description": "Debout avec les mains sur les hanches ou jointes derrière la nuque. Descendre en pliant le genou droit jusqu'à ce que le genou de la jambe arrière soit presque en contact avec le sol. Revenez à la position initiale en étendant le genou de la jambe arrière. Recommencez en alternant de jambe.",
+        "duration": 30,
+        "break": 10
+    }, {
+        "name": "Pompe & Rotation",
+        "picture": "img/push-up-and-rotation.png",
+        "description": "Mettez vous en position classique de pompe, faites pivoter votre corps afin que votre bras droit se soulève et s’étende complètement. Vos bras et votre torse doivent former un T. Abaissez vous pour retourner en position initiale et recommencez dans l’autre sens.",
+        "duration": 30,
+        "break": 10
+    }, {
+        "name": "Gainage oblique gauche",
+        "picture": "img/side-plank-left.png",
+        "description": "Allongez-vous sur le côté gauche. Placer l'avant-bras sur le sol sous l'épaule perpendiculaires au corps. Placer la cuisse directement sur le dessus de la jambe et de redresser les genoux et les hanches. Levez corps vers le haut en redressant la taille. Maintenez la position.",
+        "duration": 15
+    }, {
+        "name": "Gainage oblique droite",
+        "picture": "img/side-plank-right.png",
+        "description":"Sans faire de pause, effectuez le même mouvement en vous allongeant du cotés droit.",
+        "duration": 15
+    }
+]
