@@ -14,6 +14,10 @@ header {
     font-size: 2em;
 }
 
+.container {
+    position: relative;
+}
+
 .logo {
     height: 40px;
 }
@@ -26,6 +30,23 @@ header {
     left: 50%;
     margin-top: -75px;
     margin-left: -225px;
+}
+
+.headerSocial {
+    position: absolute;
+    margin-top: -10px;
+    height: 60px;
+    left: 120px;
+}
+
+.headerTwitter {
+    position: absolute;
+    top: 7px;
+}
+
+.headerFacebook {
+    position: absolute;
+    top: 33px;
 }
 
 .navbar-static-top .navbar-inner  {
@@ -83,7 +104,7 @@ header {
 .launchButton{
     font-size: 50px;
     position: relative;
-    
+
     top: 60%;
     margin-top: -35px;
 }
@@ -428,7 +449,6 @@ div.hard {
 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
-
     .navbar .brand {
         padding: 0 10px;
     }
@@ -441,7 +461,10 @@ div.hard {
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
-
+    .headerSocial {
+        left: 130px;
+    }
+    
     .navbar .brand {
         padding: 0 10px;
     }
