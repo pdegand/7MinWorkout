@@ -3,21 +3,29 @@
 /* Controllers */
 
 angular.module('smwApp.controllers', []).
-        controller('MainCtrl', function($scope, $location, Steps) {
+        controller('MainCtrl', function($scope, $location, Steps, l10n) {
     $(document).trigger("smwReady");
-    $scope.steps = Steps.query(function() {
-        console.log("Steps loaded. currentStep set to index 0");
-        $scope.currentStepIndex = 0;
-        $scope.currentStep = $scope.steps[0];
+    $scope.locale = l10n;
+    $scope.$watch('locale', function() {
+        var locale = $scope.locale.getLocale();
+        if (locale === 'fr-fr')
+            $scope.exercises = Steps.fr.query();
+        else
+            $scope.exercises = Steps.en.query();
     });
     $(document).on('redirect', function() {
         $location.path('/congratulation').replace();
         $scope.$apply();
     });
 
-}).controller('ExercisesCtrl', function($scope, Steps) {
-    $scope.exercises = Steps.query(function() {
-        console.log('Exercises loaded');
+}).controller('ExercisesCtrl', function($scope, Steps, l10n) {
+    $scope.locale = l10n;
+    $scope.$watch('locale', function() {
+        var locale = $scope.locale.getLocale();
+        if (locale === 'fr-fr')
+            $scope.exercises = Steps.fr.query();
+        else
+            $scope.exercises = Steps.en.query();
     });
 }).controller('FlagsCtrl', function($scope, $location, Translator) {
     $scope.$location = $location;
