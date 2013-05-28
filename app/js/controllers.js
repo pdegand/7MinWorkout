@@ -26,4 +26,6 @@ angular.module('smwApp.controllers', []).
     });
 }).controller('CongratCtrl', function($scope) {
 
+}).controller('WhatIsThisCtrl', function($scope, l10n) {
+    $scope.locale = l10n;
 });

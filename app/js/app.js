@@ -9,7 +9,7 @@ angular.module('smwApp', ['ngResource', 'smwApp.filters', 'smwApp.services', 'sm
             controller: 'MainCtrl'
         });
         $routeProvider.when('/infos', {
-            templateUrl: 'partials/infos_en-us.html'
+            templateUrl: 'partials/infos.html'
         });
         $routeProvider.when('/smw', {
             templateUrl: 'partials/smwApp.html',
