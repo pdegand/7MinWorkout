@@ -12,7 +12,7 @@ function showSocialHeader() {
 angular.module('smwApp.controllers', []).
         controller('MainCtrl', function($scope, $location, Steps, l10n) {
     showSocialHeader();
-
+    
     $(document).trigger("smwReady");
     $scope.locale = l10n;
     $scope.$watch('locale', function() {
@@ -47,4 +47,15 @@ angular.module('smwApp.controllers', []).
 }).controller('WhatIsThisCtrl', function($scope, l10n) {
     showSocialHeader();
     $scope.locale = l10n;
+}).controller('PopupCtrl', function($scope, $location) {
+    var preferedLocale = localStorage['preferedLocale'];
+    if(preferedLocale) {
+    } else {
+        //setting default local
+        localStorage['preferedLocale'] = 'en';
+        $location.search({l:'en'});
+        $('#welcomeModal').modal({
+            backdrop:'static'
+        });
+    }
 });

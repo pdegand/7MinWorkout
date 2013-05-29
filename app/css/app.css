@@ -420,6 +420,36 @@ div.hard {
     text-align: left;
     width: 49%;
 }
+
+/* MODALE */
+.modal-flags {
+    width: 100%;
+    overflow: auto;
+    position: relative;
+}
+
+.modal-flags a {
+    width: 100%;
+    text-align: center;
+}
+
+.modal-flags img {
+    width: 210px;
+    height: 110px;
+}
+
+.modal-flags .fr {
+    width: 50%;
+    float: right;
+    position: relative;
+}
+
+.modal-flags .en {
+    width: 50%;
+    float: left;
+    position: relative;
+}
+
 /* Custom Responsive values */
 /* Based on Twitter Bootstrap responsive media queries */
 /* Large desktop */

@@ -20,14 +20,25 @@ angular.module('smwApp.services', []).
                     l10n.setLocale('fr-fr');
                     localeValue = 'fr';
                 }
-            } else {
+            } else if( params.l && params.l === "en") { 
                 if (currentLocale !== 'en-us') {
+                    l10n.setLocale('en-us');
+                    localeValue = 'en';
+                }
+            } else {
+                console.log(">>>>> NO LOCALE IN URL");
+                var preferedLocale = localStorage['preferedLocale'];
+                if(preferedLocale && preferedLocale === 'fr') {
+                    l10n.setLocale('fr-fr');
+                    localeValue = 'fr';
+                } else {
                     l10n.setLocale('en-us');
                     localeValue = 'en';
                 }
             }
             if (localeValue) {
-                console.log("links updated to locale");
+                $location.search({l:localeValue});
+                localStorage['preferedLocale'] = localeValue;
                 $('a[data-smw-translate]').each(function(index, element) {
                     var current = $(element).attr('href');
                     var pos = current.indexOf('?');
