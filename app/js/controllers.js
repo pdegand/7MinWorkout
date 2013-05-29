@@ -2,9 +2,17 @@
 
 /* Controllers */
 
+function showSocialHeader() {
+    if($('#headerSocialWrapper').is(':hidden')) {
+        $('#headerSocialWrapper').fadeIn();
+        FB.XFBML.parse();      
+    }
+}
+
 angular.module('smwApp.controllers', []).
         controller('MainCtrl', function($scope, $location, Steps, l10n) {
-    $("#headerSocialWrapper").fadeIn();
+    showSocialHeader();
+
     $(document).trigger("smwReady");
     $scope.locale = l10n;
     $scope.$watch('locale', function() {
@@ -20,7 +28,7 @@ angular.module('smwApp.controllers', []).
     });
 
 }).controller('ExercisesCtrl', function($scope, Steps, l10n) {
-    $("#headerSocialWrapper").fadeIn();
+    showSocialHeader();
     $scope.locale = l10n;
     $scope.$watch('locale', function() {
         var locale = $scope.locale.getLocale();
@@ -30,14 +38,13 @@ angular.module('smwApp.controllers', []).
             $scope.exercises = Steps.en.query();
     });
 }).controller('FlagsCtrl', function($scope, $location, Translator) {
-    $("#headerSocialWrapper").fadeIn();
     $scope.$location = $location;
     $scope.$on('$routeChangeSuccess', function() {
         Translator.apply();
     });
 }).controller('CongratCtrl', function($scope) {
-
+    
 }).controller('WhatIsThisCtrl', function($scope, l10n) {
-    $("#headerSocialWrapper").fadeIn();
+    showSocialHeader();
     $scope.locale = l10n;
 });

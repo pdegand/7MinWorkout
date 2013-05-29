@@ -17,7 +17,10 @@
     </div>
 </div>
 <script>
+    $(function() {
+        $("#headerSocialWrapper").fadeOut(function() {
+        });
+    });
     $.ajax({url: 'http://platform.twitter.com/widgets.js', dataType: 'script', cache: true});
-    FB.XFBML.parse();
-    $("#headerSocialWrapper").fadeOut();
+    FB.XFBML.parse();   
 </script>
