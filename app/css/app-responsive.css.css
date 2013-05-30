@@ -14,6 +14,11 @@
 }
 
 @media (min-width: 980px) and (max-width: 1199px) {
+    
+    .logo.big {
+        top: 15%;
+    }
+    
     .navbar .brand {
         padding: 0 10px;
     }
@@ -37,6 +42,10 @@
     #smwApp {
         height: 370px;
         font-size: 30px;
+    }
+    
+    .logo.big {
+        top: 15%;
     }
 }
 
