@@ -1,0 +1,161 @@
+/* Custom Responsive values */
+/* Based on Twitter Bootstrap responsive media queries */
+/* Large desktop */
+@media (min-width: 1200px) {
+
+    .navbar .brand {
+        padding: 0 10px;
+    }
+
+    #smwApp {
+        height: 530px;
+        font-size: 53px;
+    }
+}
+
+@media (min-width: 980px) and (max-width: 1199px) {
+    .navbar .brand {
+        padding: 0 10px;
+    }
+
+    #smwApp {
+        height: 370px;
+        font-size: 37px;
+    }
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+    .headerSocial {
+        left: 130px;
+    }
+
+    .navbar .brand {
+        padding: 0 10px;
+    }
+
+    #smwApp {
+        height: 370px;
+        font-size: 30px;
+    }
+}
+
+/* Landscape phone to portrait tablet */
+/* Mobile Design goes here */
+@media (max-width: 767px) {
+
+    .modal {
+        position: absolute;
+    }
+
+    #pageContent {
+        margin: 25px auto;
+    }
+
+    .headerSocial {
+        left: 130px;
+    }
+
+    .navbar .brand {
+        padding: 0 10px;
+    }
+
+    .exercises hr.exerciseSeparator {
+        margin: 20px 0;
+    }
+
+    #smwApp {
+        height: 450px;
+        font-size: 30px;
+        padding: 0;
+    }
+
+    #smwApp #steps {
+        width: 100%;
+        height: 70%;
+        border: none;
+        display: none;
+    }
+
+    .titleWrapper {
+        height: 1.5em;
+    }
+
+    .imgWrapper {      
+        width: 100%;
+        height: 65%;
+        float: none;
+        position:relative;
+        text-align: center;
+    }
+
+    .imgWrapper img {
+        position: static;
+        margin-left: auto;
+        margin-top: auto;
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .timeLapWrapper {
+        width: 100%;
+        height: 20%;
+        float: none;
+    }
+
+    .timeLapWrapper .timeLap {
+        position: relative;
+        color: #f89406;
+        font-size: 55px;
+        line-height: normal;
+        text-shadow: rgba(0,0,0,.5) 0 2px 2px;
+    }
+
+    .titleWrapper .title {
+        line-height: 1.5em;
+    }
+
+    #smwApp #next_steps {
+        width: 100%;
+        height: 30%;
+        display: none;
+    }
+
+    .nextTitleWrapper {
+        height: 1em;
+    }
+
+    .nextTitleWrapper .title {
+        line-height: 1;
+    }
+
+    .nextImgWrapper {
+        height : 80%;
+        width: 50%;
+        float: left;
+        position: relative;
+    }
+
+    .nextImgWrapper .img {
+        height: 100%;
+        width: auto;
+        max-height: 200px;
+    }
+
+    .nextTimeLapWrapper {
+        width: 50%;
+        float: right;
+        height: 80%;
+    }
+
+    .nextTimeLapWrapper .timeLap {
+        color: #7adb83;
+        font-size: 2em;
+        line-height: 1.5;
+        text-shadow: rgba(0,0,0,.5) 0 2px 1px;
+    }
+
+    #timeline {
+        display: none;
+    }
+}

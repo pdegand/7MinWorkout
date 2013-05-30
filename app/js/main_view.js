@@ -111,7 +111,7 @@ var Model = function() {
 
                     model.addStep(exercise.name, "hard", exercise.duration, exercise.picture);
                     if (exercise.break) {
-                        model.addStep("Break", "break", exercise.break, "img/break2.png");
+                        model.addStep("Break", "break", exercise.break, "img/break4.png");
                     }
                 }
             }
