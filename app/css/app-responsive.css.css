@@ -84,6 +84,7 @@
         height: 70%;
         border: none;
         display: none;
+        border-bottom: 1px solid #eee;
     }
 
     .titleWrapper {
@@ -126,8 +127,9 @@
 
     #smwApp #next_steps {
         width: 100%;
-        height: 30%;
+        height: 29%;
         display: none;
+        border-top: 1px solid #fff;
     }
 
     .nextTitleWrapper {
