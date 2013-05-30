@@ -19,7 +19,8 @@ angular.module('smw-l10n', ['l10n']).config(['l10nProvider', function(l10n){
             welcome: 'Welcome at 7MinWorkout.net !',
             p1: 'Before starting this 7-Minutes workout, you definitely should start by learning the different exercises.',
             p2: 'Click on the button bellow to start learning the exercises !',
-            button: 'Learn The Exercises'
+            button: 'Learn The Exercises',
+            continue:'Continue'
         }
     });
     l10n.add('fr-fr', {
@@ -29,7 +30,8 @@ angular.module('smw-l10n', ['l10n']).config(['l10nProvider', function(l10n){
         header: {
             home: 'Accueil',
             exercises: 'Voir les exercices',
-            infos: "C'est quoi ?"
+            infos: "C'est quoi ?",
+
         },
         exercises: {
             intro: 'Les exercices durent tous 30sec, avec 10sec de pause entre chaque. Le temps total du programme est donc approximativement 7 minutes. Le programme peut être répété 2 à 3 fois.'
@@ -41,7 +43,8 @@ angular.module('smw-l10n', ['l10n']).config(['l10nProvider', function(l10n){
             welcome: 'Bienvenue sur 7MinWorkout.net !',
             p1: 'Avant de commencer votre entrainement de 7 minutes, vous devriez commencer par apprendre les exercises.',
             p2: 'Cliquez sur le bouton ci-dessous pour accéder à la liste des exercises !',
-            button: 'Apprendre Les Exercises'
+            button: 'Apprendre Les Exercises',
+            continue:'Continuer'
         }
     });
 }]);

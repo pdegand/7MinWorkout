@@ -104,7 +104,7 @@ header {
 .launchButton{
     font-size: 50px;
     position: relative;
-
+    z-index:15;
     top: 60%;
     margin-top: -35px;
 }
@@ -278,6 +278,19 @@ footer span:last-child {
     background-position:center;
     display:none;
 }
+
+
+#calqueInvisible{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: white;
+    opacity: 0;
+    z-index: 8;
+    display:none;
+}
 /* FIN CSS PARTIAL MAIN_VIEW */
 
 /* CSS TIMELINE */
@@ -373,7 +386,8 @@ div.hard {
     position:absolute;
     top:0px;
     left:0px;
-    z-index:8;
+    z-index:6;
+
     opacity:1;
 }
 
@@ -426,8 +440,12 @@ div.hard {
     width: 100%;
     overflow: auto;
     position: relative;
+    text-align:center;
 }
 
+#welcomeModal h3{
+    text-align:center;
+}
 .modal-flags a {
     width: 100%;
     text-align: center;

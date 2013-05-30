@@ -49,6 +49,7 @@ $("#smwApp").click(function(){
         $(".countdown").fadeIn();
         $(".launchButton").fadeOut();
         $("#beginning .countdown").html("3");
+        $("#calqueInvisible").css("display", "block");
         setTimeout(countDown, 1000);
         setTimeout(countDown, 2000);
         setTimeout(countDown, 3000);
@@ -65,6 +66,7 @@ $("#smwApp").click(function(){
 
             $("#next_steps").css("display", "block");
             $("#steps").css("display", "block");
+            
             cycler();
             $("#beginning").fadeOut();
 
