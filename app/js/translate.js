@@ -21,6 +21,10 @@ angular.module('smw-l10n', ['l10n']).config(['l10nProvider', function(l10n){
             p2: 'Click on the button bellow to start learning the exercises !',
             button: 'Learn The Exercises',
             continue:'Continue'
+        },
+        congratulation: {
+            again: 'Do it again !',
+            gg: 'Don\'t forget that you won\'t get results if you are not doing this 7MinWorkout every day !'
         }
     });
     l10n.add('fr-fr', {
@@ -45,6 +49,10 @@ angular.module('smw-l10n', ['l10n']).config(['l10nProvider', function(l10n){
             p2: 'Cliquez sur le bouton ci-dessous pour accéder à la liste des exercises !',
             button: 'Apprendre Les Exercises',
             continue:'Continuer'
+        },
+        congratulation: {
+            again: 'Recommencer !',
+            gg: 'N\'oubliez pas que vous n\'aurez pas de résultats si vous ne suivez pas 7MinWorkout tous les jours !'
         }
     });
 }]);

@@ -376,7 +376,7 @@ div.hard {
     top:0px;
     left:0px;
     z-index:6;
-    
+
     opacity:1;
 }
 
@@ -399,7 +399,7 @@ div.hard {
     height: auto;
     max-height: 150px;
     max-width: 450px;
-    
+
     position: relative;
     top: 25%;
 }
@@ -422,11 +422,7 @@ div.hard {
     font-size: 3em;
 }
 
-.exercise .exercisePicture.pull-right {
-    margin: 0 50px;
-}
-
-.exercise .exercisePicture.pull-left {
+.exercise .exercisePicture{
     margin: 0 50px;
 }
 
@@ -460,7 +456,6 @@ div.hard {
 
 .modal-flags {
     width: 100%;
-    overflow: auto;
     position: relative;
     text-align:center;
 }
@@ -468,24 +463,46 @@ div.hard {
 #welcomeModal h3{
     text-align:center;
 }
-.modal-flags a {
+.modal-flags {
     width: 100%;
-    text-align: center;
-}
-
-.modal-flags img {
-    width: 210px;
-    height: 110px;
-}
-
-.modal-flags .fr {
-    width: 50%;
-    float: right;
     position: relative;
+}
+
+.modal-flags .wrapperEn {
+    width: 50%;
+    float: left;
 }
 
 .modal-flags .en {
+    display: inline-block;
+}
+
+.modal-flags .wrapperFr {
     width: 50%;
-    float: left;
-    position: relative;
+    float: right;
+}
+
+.modal-flags .fr {
+    display: inline-block;
+}
+
+.modal-flags img {
+    width: 100%;
+    max-width: 210px;
+    max-height: 111px;
+}
+
+.modal-flags a {
+    text-align: center;
+}
+
+.thumbnails {
+    margin: 0 auto;
+}
+
+.thumbnail.active {
+    border-color: #0088cc;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+    -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+    box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
 }

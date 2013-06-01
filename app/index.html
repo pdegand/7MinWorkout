@@ -29,12 +29,16 @@
                     <h3 data-smw-translate data-l10n-text="modal.welcome"></h3>
                 </div>
                 <div class="modal-body">
-                    <div class="modal-flags" data-ng-controller="FlagsCtrl">
-                        <div class="en">
-                            <a href="#!{{$location.path()}}?l=en"><img class="img" src="./img/flag_us.gif" alt="flag_en" title="en"/></a>
+                    <div class="modal-flags thumbnails clearfix" data-ng-controller="FlagsCtrl">
+                        <div class="wrapperEn">
+                            <span class="en">
+                                <a class="thumbnail" id="en-flag" href="#!{{$location.path()}}?l=en"><img class="img" src="./img/flag_us.gif" alt="flag_en" title="en"/></a>
+                            </span>
                         </div>
-                        <div class="fr">
-                            <a href="#!{{$location.path()}}?l=fr"><img class="img" src="./img/flag_fr.gif" alt="flag_fr" title="fr"/></a>
+                        <div class="wrapperFr">
+                            <span class="fr">
+                                <a class="thumbnail" id="fr-flag" href="#!{{$location.path()}}?l=fr"><img class="img" src="./img/flag_fr.gif" alt="flag_fr" title="fr"/></a>
+                            </span>
                         </div>
                     </div>
                     <hr>
@@ -42,8 +46,8 @@
                     <p data-smw-translate data-l10n-text="modal.p2"></p>
                 </div>
                 <div class="modal-footer">
-                    <a data-smw-translate href="#!/exercises" class="btn btn-warning" data-l10n-text="modal.button" data-dismiss="modal"></a>
-                     <a data-smw-translate href="#!/home" class="btn btn-warning" data-l10n-text="modal.continue" data-dismiss="modal"></a>
+                    <a data-smw-translate href="#!/home" class="btn" data-l10n-text="modal.continue" data-dismiss="modal"></a>
+                    <a data-smw-translate href="#!/exercises" class="btn btn-warning" data-l10n-text="modal.button" data-dismiss="modal"></a>            
                 </div>
             </div>
         </div>

@@ -37,6 +37,14 @@ angular.module('smwApp.services', []).
                 }
             }
             if (localeValue) {
+                $('.thumbnail').each(function(index, element){
+                   $(element).removeClass('active'); 
+                });
+                if(localeValue === 'fr') {
+                    $('#fr-flag').addClass('active');
+                } else if (localeValue === 'en') {
+                    $('#en-flag').addClass('active');
+                }
                 $location.search({l:localeValue});
                 localStorage['preferedLocale'] = localeValue;
                 $('a[data-smw-translate]').each(function(index, element) {

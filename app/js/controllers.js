@@ -42,8 +42,8 @@ angular.module('smwApp.controllers', []).
     $scope.$on('$routeChangeSuccess', function() {
         Translator.apply();
     });
-}).controller('CongratCtrl', function($scope) {
-    
+}).controller('CongratCtrl', function($scope, l10n) {
+    $scope.locale = l10n;
 }).controller('WhatIsThisCtrl', function($scope, l10n) {
     showSocialHeader();
     $scope.locale = l10n;

@@ -11,14 +11,18 @@
         height: 530px;
         font-size: 53px;
     }
+
+    .thumbnails {
+        margin-left: 0;
+    }
 }
 
 @media (min-width: 980px) and (max-width: 1199px) {
-    
+
     .logo.big {
         top: 15%;
     }
-    
+
     .navbar .brand {
         padding: 0 10px;
     }
@@ -31,6 +35,15 @@
 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
+
+    .lead {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .exercises hr.exerciseSeparator {
+        margin: 20px 0;
+    }    
+
     .headerSocial {
         left: 130px;
     }
@@ -43,7 +56,7 @@
         height: 370px;
         font-size: 30px;
     }
-    
+
     .logo.big {
         top: 15%;
     }
@@ -52,6 +65,19 @@
 /* Landscape phone to portrait tablet */
 /* Mobile Design goes here */
 @media (max-width: 767px) {
+
+    .lead {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .exercise {
+        text-align: center;
+    }
+
+    .exercise .exercisePicture {
+        float: none;
+    }
 
     .modal {
         position: absolute;

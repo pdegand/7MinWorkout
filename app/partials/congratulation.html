@@ -1,6 +1,6 @@
-<div class="container">
-    <div class="box drop-shadow relative">
-        <h1>Congratulation!</h1>
+<div class="container" data-ng-controller="CongratCtrl" data-ng-switch="locale.getLocale()">
+    <div class="box drop-shadow relative" data-ng-switch-when="fr-fr">
+        <h1>Bravo !</h1>
         <div class="socialWrapper">
             <div class="twitterWrapper">
                 <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://7minworkout.net" data-text="Just trained for 7 minutes with" data-size="large" data-hashtags="7MinWorkout">Tweet</a>
@@ -10,9 +10,25 @@
                 <div class="fb-like" data-href="https://www.facebook.com/7minworkout.net" data-send="true" data-width="450" data-show-faces="false" data-font="verdana"></div>
             </div>
         </div>
-        <p class="lead"><br>Don't forget that you won't get results if you are not doing this 7MinWorkout every day !</p>
+        <p class="lead"><br><span>N'oubliez pas que vous n'aurez pas de résultats si vous ne suivez pas 7MinWorkout tous les jours !</span></p>
         <p>
-            <a href="#" class="btn btn-primary btn-large btn-warning">Do it Again !</a>
+            <a href="#" class="btn btn-primary btn-large btn-warning">Recommencer !</a>
+        </p>
+    </div>
+    <div class="box drop-shadow relative" data-ng-switch-default>
+        <h1>Congratulation !</h1>
+        <div class="socialWrapper">
+            <div class="twitterWrapper">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://7minworkout.net" data-text="Just trained for 7 minutes with" data-size="large" data-hashtags="7MinWorkout">Tweet</a>
+
+            </div>
+            <div class="fbWrapper">
+                <div class="fb-like" data-href="https://www.facebook.com/7minworkout.net" data-send="true" data-width="450" data-show-faces="false" data-font="verdana"></div>
+            </div>
+        </div>
+        <p class="lead"><br><span>Don't forget that you won't get results if you are not doing this 7MinWorkout every day !</span></p>
+        <p>
+            <a href="#" class="btn btn-primary btn-large btn-warning">Do it again !</a>
         </p>
     </div>
 </div>
@@ -22,5 +38,5 @@
         });
     });
     $.ajax({url: 'http://platform.twitter.com/widgets.js', dataType: 'script', cache: true});
-    FB.XFBML.parse();   
+    FB.XFBML.parse();
 </script>
