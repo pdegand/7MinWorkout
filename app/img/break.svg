@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="200"
+   height="200"
+   id="svg2985"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="break.svg"
+   inkscape:export-filename="D:\Users\Pierre Degand\Documents\Code\public_html\7MinWorkout\app\img\break4.png"
+   inkscape:export-xdpi="85.929108"
+   inkscape:export-ydpi="85.929108">
+  <defs
+     id="defs2987">
+    <filter
+       id="filter3853"
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow">
+      <feFlood
+         id="feFlood3855"
+         flood-opacity="0.5"
+         flood-color="rgb(0,0,0)"
+         result="flood" />
+      <feComposite
+         id="feComposite3857"
+         in2="SourceGraphic"
+         in="flood"
+         operator="in"
+         result="composite1" />
+      <feGaussianBlur
+         id="feGaussianBlur3859"
+         in="composite"
+         stdDeviation="2"
+         result="blur" />
+      <feOffset
+         id="feOffset3861"
+         dx="0"
+         dy="4"
+         result="offset" />
+      <feComposite
+         id="feComposite3863"
+         in2="offset"
+         in="SourceGraphic"
+         operator="over"
+         result="composite2" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="148.82676"
+     inkscape:cy="52.44215"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1">
+    <sodipodi:guide
+       orientation="1,0"
+       position="100,176.07143"
+       id="guide2993" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="121.42857,100"
+       id="guide2995" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata2990">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-852.36218)">
+    <path
+       sodipodi:type="arc"
+       style="fill:#7adb83;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1;filter:url(#filter3853)"
+       id="path2997"
+       sodipodi:cx="100"
+       sodipodi:cy="100"
+       sodipodi:rx="86.785713"
+       sodipodi:ry="86.785713"
+       d="m 186.78571,100 a 86.785713,86.785713 0 1 1 -173.571423,0 86.785713,86.785713 0 1 1 173.571423,0 z"
+       transform="translate(0,852.36218)" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#f89406;fill-opacity:1"
+       id="path3767"
+       sodipodi:cx="100"
+       sodipodi:cy="100"
+       sodipodi:rx="59.642857"
+       sodipodi:ry="59.642857"
+       d="m 159.64286,100 a 59.642857,59.642857 0 1 1 -119.285717,0 59.642857,59.642857 0 1 1 119.285717,0 z"
+       transform="matrix(1.245509,0,0,1.245509,-24.550898,827.81128)" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3865"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(-13.214286,847.9336)"><flowRegion
+         id="flowRegion3867"><rect
+           id="rect3869"
+           width="177.85715"
+           height="48.92857"
+           x="52.142857"
+           y="81.428574" /></flowRegion><flowPara
+         id="flowPara3871"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#7adb83;fill-opacity:1;font-family:Aharoni;-inkscape-font-specification:Aharoni Bold">BREAK</flowPara></flowRoot>  </g>
+</svg>

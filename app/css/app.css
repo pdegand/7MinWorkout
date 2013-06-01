@@ -22,16 +22,6 @@ header {
     height: 40px;
 }
 
-.logo.big {
-    height: 150px;
-    width: 450px;
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    margin-top: -75px;
-    margin-left: -225px;
-}
-
 .headerSocial {
     position: absolute;
     margin-top: -10px;
@@ -214,8 +204,8 @@ footer span:last-child {
     left:50%;
     margin-left: -100px;
     margin-top: -100px;
-    vertical-align: middle;
-    max-height: 200px;
+    width: 100%;
+    max-width: 200px;
 }
 
 .timeLapWrapper {
@@ -387,8 +377,36 @@ div.hard {
     top:0px;
     left:0px;
     z-index:6;
-
+    
     opacity:1;
+}
+
+.bigLogoWrapper {
+    width: 100%;
+    height: 60%;
+    position: relative;
+    text-align: center;
+}
+
+.logo.big {
+    /*height: 150px;
+    width: 450px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    margin-top: -75px;
+    margin-left: -225px;*/
+    width: 90%;
+    height: auto;
+    max-height: 150px;
+    max-width: 450px;
+    
+    position: relative;
+    top: 25%;
+}
+
+.launchButton {
+    font-size: 1.4em;
 }
 
 /* FIN CSS TIMELINE */
@@ -436,6 +454,11 @@ div.hard {
 }
 
 /* MODALE */
+
+.modal {
+    position: absolute;
+}
+
 .modal-flags {
     width: 100%;
     overflow: auto;
@@ -467,62 +490,3 @@ div.hard {
     float: left;
     position: relative;
 }
-
-/* Custom Responsive values */
-/* Based on Twitter Bootstrap responsive media queries */
-/* Large desktop */
-@media (min-width: 1200px) {
-
-    .navbar .brand {
-        padding: 0 10px;
-    }
-
-    #smwApp {
-        height: 530px;
-        font-size: 53px;
-    }
-}
-
-@media (min-width: 980px) and (max-width: 1199px) {
-    .navbar .brand {
-        padding: 0 10px;
-    }
-
-    #smwApp {
-        height: 370px;
-        font-size: 37px;
-    }
-}
-
-/* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) {
-    .headerSocial {
-        left: 130px;
-    }
-    
-    .navbar .brand {
-        padding: 0 10px;
-    }
-
-    #smwApp {
-        height: 370px;
-        font-size: 20px;
-    }
-}
-
-/* Landscape phone to portrait tablet */
-@media (max-width: 767px) {
-    .headerSocial {
-        left: 130px;
-    }
-    
-    .navbar .brand {
-        padding: 0 10px;
-    }
-
-    #smwApp {
-        height: 370px;
-        font-size: 30px;
-    }
-}
-
