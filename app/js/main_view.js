@@ -1,6 +1,7 @@
 var controller;
-$(document).on("smwReady", function() {
-
+var locale;
+$(document).on("smwReady", function(event, data) {
+    locale = data.locale;
     if (controller)
         controller.timer.reset();
     //     timer.reset();
@@ -97,10 +98,16 @@ var Model = function() {
     this.cursor = 0;
     this.steps = new Array();
     this.maxTime = 0;
+    var url;
+    if(locale === 'fr-fr') {
+        url = 'data/exercises_fr.json';
+    } else {
+        url = 'data/exercises.json';
+    }
     this.init = function() {
         this.cursor = 0;
         $.ajax({
-            url: 'data/exercises.json',
+            url: url,
             method: 'get',
             contentType: 'JSON',
             async: false,

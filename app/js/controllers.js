@@ -3,17 +3,16 @@
 /* Controllers */
 
 function showSocialHeader() {
-    if($('#headerSocialWrapper').is(':hidden')) {
+    if ($('#headerSocialWrapper').is(':hidden')) {
         $('#headerSocialWrapper').fadeIn();
-        FB.XFBML.parse();      
+        FB.XFBML.parse();
     }
 }
 
 angular.module('smwApp.controllers', []).
         controller('MainCtrl', function($scope, $location, Steps, l10n) {
     showSocialHeader();
-    
-    $(document).trigger("smwReady");
+
     $scope.locale = l10n;
     $scope.$watch('locale', function() {
         var locale = $scope.locale.getLocale();
@@ -21,7 +20,10 @@ angular.module('smwApp.controllers', []).
             $scope.exercises = Steps.fr.query();
         else
             $scope.exercises = Steps.en.query();
+
+        $(document).trigger("smwReady", {"locale": l10n.getLocale()});
     });
+
     $(document).on('redirect', function() {
         $location.path('/congratulation').replace();
         $scope.$apply();
@@ -49,13 +51,13 @@ angular.module('smwApp.controllers', []).
     $scope.locale = l10n;
 }).controller('PopupCtrl', function($scope, $location) {
     var preferedLocale = localStorage['preferedLocale'];
-    if(preferedLocale) {
+    if (preferedLocale) {
     } else {
         //setting default local
         localStorage['preferedLocale'] = 'en';
-        $location.search({l:'en'});
+        $location.search({l: 'en'});
         $('#welcomeModal').modal({
-            backdrop:'static'
+            backdrop: 'static'
         });
     }
 });
