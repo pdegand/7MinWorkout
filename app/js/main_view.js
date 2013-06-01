@@ -97,10 +97,19 @@ var Model = function() {
     this.cursor = 0;
     this.steps = new Array();
     this.maxTime = 0;
+    
+    
     this.init = function() {
+       // if(local =="FR")
+       console.log("lol");
+       console.log(localStorage.getItem("preferedLocale"));
+       var url;
+       if(localStorage.getItem("preferedLocale") =="fr")
+           url = 'data/exercises_fr.json';
+       else url = 'data/exercises.json';
         this.cursor = 0;
         $.ajax({
-            url: 'data/exercises.json',
+            url: url,
             method: 'get',
             contentType: 'JSON',
             async: false,
