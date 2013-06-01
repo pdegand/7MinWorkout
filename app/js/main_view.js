@@ -143,9 +143,10 @@ var Model = function() {
 
 var Timer = function(callback) {
     var timer = this;
-    this.fps = 1;
+    this.fps = 30;
     var time = 0;
     var timeLap = 0;
+    this.beginingTime;
     this.status = -1;
     this.interval = null;
     this.callback = callback;
@@ -159,6 +160,7 @@ var Timer = function(callback) {
         timer.time = 0;
         timer.timeLap = 0;
         timer.status = 1;
+        timer.beginingTime = new Date().getTime();
         this.interval = setInterval(timer.update, 1000 / timer.fps);
     };
 
@@ -167,6 +169,7 @@ var Timer = function(callback) {
         timer.status = 0;
         timer.time = 0;
         timer.timeLap = 0;
+        timer.beginingTime = new Date().getTime();
     };
     timer.stop = function() {
         //console.log("timer stop");
@@ -178,17 +181,21 @@ var Timer = function(callback) {
         //console.log("timer stop");
         var total = 1000/timer.fps;
         console.log(total);
+        timer.beginingTime = new Date().getTime();
         this.interval = setInterval(timer.update, 1000 / timer.fps);
         timer.status = 1;
     };
     timer.update = function() {
-        timer.time += (1000 / timer.fps) * debugMultiplier;
-        timer.timeLap += (1000 / timer.fps) * debugMultiplier;
+        
+        var time = new Date().getTime() - timer.beginingTime;
+        timer.beginingTime = new Date().getTime();
+        timer.time += time* debugMultiplier;
+        timer.timeLap += time * debugMultiplier;
         timer.callback(timer.time, timer.timeLap);
     };
 
-    timer.resetLap = function() {
-        this.timeLap = 0;
+    timer.resetLap = function(duration) {
+        this.timeLap -= duration * 1000;
     };
 };
 
@@ -217,7 +224,7 @@ var Controller = function() {
     this.update = function(time, timeLap) {
         var currentStep = controller.model.getCurrent();
         if (timeLap / 1000 >= currentStep.duration) {
-            controller.timer.resetLap();
+            controller.timer.resetLap(currentStep.duration);
             if (!controller.model.next()) {
                 $(document).trigger("redirect");
                 controller.timer.stop();
