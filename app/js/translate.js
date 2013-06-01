@@ -7,7 +7,7 @@ angular.module('smw-l10n', ['l10n']).config(['l10nProvider', function(l10n){
         header: {
             home: 'Home',
             exercises: 'Learn The Exercises',
-            infos: 'What is this ?!'
+            infos: 'About'
         },
         exercises: {
             intro: 'Exercises are performed for 30 seconds, with 10 seconds of transition time between bouts. Total time for the entire circuit workout is approximately 7 minutes. The circuit can be repeated 2 to 3 times.'
@@ -30,7 +30,7 @@ angular.module('smw-l10n', ['l10n']).config(['l10nProvider', function(l10n){
         header: {
             home: 'Accueil',
             exercises: 'Voir les exercices',
-            infos: "C'est quoi ?",
+            infos: "A propos",
 
         },
         exercises: {
