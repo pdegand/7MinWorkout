@@ -143,13 +143,16 @@ var Model = function() {
 
 var Timer = function(callback) {
     var timer = this;
-    this.fps = 30;
+    this.fps = 1;
     var time = 0;
     var timeLap = 0;
     this.status = -1;
     this.interval = null;
     this.callback = callback;
 
+    timer.getTime = function(){
+        
+    },
     timer.start = function() {
         //console.log("timer start");
         this.time = 0;
@@ -173,6 +176,8 @@ var Timer = function(callback) {
 
     timer.restart = function() {
         //console.log("timer stop");
+        var total = 1000/timer.fps;
+        console.log(total);
         this.interval = setInterval(timer.update, 1000 / timer.fps);
         timer.status = 1;
     };
