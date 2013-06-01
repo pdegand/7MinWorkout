@@ -2,7 +2,7 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('smwApp', ['ngResource', 'smwApp.filters', 'smwApp.services', 'smwApp.directives', 'smwApp.controllers', 'l10n', 'l10n-tools', 'smw-l10n']).
+angular.module('smwApp', ['ngResource', 'smwApp.services', 'smwApp.directives', 'smwApp.controllers', 'l10n', 'l10n-tools', 'smw-l10n']).
         config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/home', {
             templateUrl: 'partials/smwApp.html',
