@@ -25,6 +25,9 @@ angular.module('smw-l10n', ['l10n']).config(['l10nProvider', function(l10n){
         congratulation: {
             again: 'Do it again !',
             gg: 'Don\'t forget that you won\'t get results if you are not doing this 7MinWorkout every day !'
+        },
+        smw: {
+            next: 'Next'
         }
     });
     l10n.add('fr-fr', {
@@ -53,6 +56,9 @@ angular.module('smw-l10n', ['l10n']).config(['l10nProvider', function(l10n){
         congratulation: {
             again: 'Recommencer !',
             gg: 'N\'oubliez pas que vous n\'aurez pas de résultats si vous ne suivez pas 7MinWorkout tous les jours !'
+        },
+        smw: {
+            next: 'Suivant'
         }
     });
 }]);
