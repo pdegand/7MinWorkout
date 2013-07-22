@@ -527,3 +527,7 @@ div.hard {
     color: #ffffff;
     background-color: #f89406;
 }
+
+iframe {
+    z-index: 100!important;
+}
